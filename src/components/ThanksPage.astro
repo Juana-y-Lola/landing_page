@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { copy, paths, type Locale } from '../lib/copy';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<BaseLayout
+  locale={locale}
+  title={`${t.thanks.title} | Juana & Lola Digital`}
+  description={t.thanks.description}
+  canonicalPath={paths[locale].thanks}
+  alternatePaths={{ es: '/gracias/', en: '/en/thank-you/' }}
+  noindex
+>
+  <main id="main-content" class="thanks-page">
+    <div class="shell thanks-content"><span class="thanks-star" aria-hidden="true">✳</span><p class="eyebrow"><span class="eyebrow-dot"></span>Juana & Lola Digital</p><h1>{t.thanks.title}</h1><p>{t.thanks.description}</p><a class="button button-dark" href={paths[locale].home}>{t.thanks.back}<span aria-hidden="true">↗</span></a></div>
+  </main>
+</BaseLayout>

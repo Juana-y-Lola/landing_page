@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f4ed"/>
+  <circle cx="1040" cy="114" r="278" fill="#f2d9ca"/>
+  <circle cx="1023" cy="426" r="320" fill="#df7964"/>
+  <circle cx="991" cy="474" r="198" fill="#253138"/>
+  <path d="M836 460 849 359l62 55c29-13 59-13 88 0l62-55 13 101c20 25 27 51 27 78 0 59-63 93-139 93s-139-34-139-93c0-27 7-53 13-78Z" fill="#fffaf0"/>
+  <path d="M902 531c12-10 25-10 37 0m46 0c12-10 25-10 37 0m-62 30 12 8 12-8" fill="none" stroke="#253138" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="84" y="76" width="70" height="70" rx="18" fill="#253138"/>
+  <text x="99" y="124" fill="#fffaf0" font-family="Arial,sans-serif" font-size="30" font-weight="bold">J<tspan fill="#df7964">&amp;</tspan>L</text>
+  <text x="84" y="284" fill="#253138" font-family="Arial,sans-serif" font-size="72" font-weight="bold" letter-spacing="-4">Juana <tspan fill="#df7964">&amp;</tspan> Lola</text>
+  <text x="84" y="362" fill="#253138" font-family="Arial,sans-serif" font-size="72" font-weight="bold" letter-spacing="-4">Digital</text>
+  <rect x="84" y="403" width="88" height="6" fill="#df7964"/>
+  <text x="84" y="466" fill="#536067" font-family="Arial,sans-serif" font-size="27">Páginas web · Software a medida · Consultoría IT</text>
+  <text x="84" y="556" fill="#a35e4b" font-family="Arial,sans-serif" font-size="20" font-weight="bold" letter-spacing="3">JUANAYLOLA.COM</text>
+</svg>

@@ -1,0 +1,77 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { copy, type Locale } from '../lib/copy';
+import '../styles/global.css';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  canonicalPath: string;
+  alternatePaths: { es: string; en: string };
+  noindex?: boolean;
+  isHome?: boolean;
+}
+
+const { locale, title, description, canonicalPath, alternatePaths, noindex = false, isHome = false } = Astro.props;
+const site = Astro.site ?? new URL('https://juanaylola.com');
+const canonical = new URL(canonicalPath, site).toString();
+const spanishUrl = new URL(alternatePaths.es, site).toString();
+const englishUrl = new URL(alternatePaths.en, site).toString();
+const ogImage = new URL('/og-image.png', site).toString();
+const structuredData = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Juana & Lola Digital',
+    url: 'https://juanaylola.com/',
+    logo: 'https://juanaylola.com/brand-mark.svg',
+    description: copy[locale].description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Juana & Lola Digital',
+    url: 'https://juanaylola.com/',
+    inLanguage: ['es', 'en'],
+  },
+];
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f4ed" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href={spanishUrl} />
+    <link rel="alternate" hreflang="en" href={englishUrl} />
+    <link rel="alternate" hreflang="x-default" href={spanishUrl} />
+    <link rel="icon" href="/brand-mark.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Juana & Lola Digital" />
+    <meta property="og:locale" content={locale === 'es' ? 'es_ES' : 'en_US'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <title>{title}</title>
+    {isHome && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />}
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">{locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
+    <Header locale={locale} alternatePaths={alternatePaths} />
+    <slot />
+    <Footer locale={locale} />
+  </body>
+</html>

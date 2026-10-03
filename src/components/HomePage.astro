@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { copy, paths, type Locale } from '../lib/copy';
+import { getProjects, projectPath } from '../lib/portfolio';
+import { petPhotos } from '../lib/pets';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale];
+const projects = await getProjects(locale);
+const allConcepts = projects.every((project) => project.data.kind === 'concept');
+---
+
+<BaseLayout locale={locale} title={t.title} description={t.description} canonicalPath={paths[locale].home} alternatePaths={{ es: '/', en: '/en/' }} isHome>
+  <main id="main-content">
+    <section class="hero section-pad">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.hero.eyebrow}</p>
+          <h1>{t.hero.before} <em>{t.hero.highlight}</em></h1>
+          <p class="hero-lead">{t.hero.body}</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#contacto">{t.hero.primary}<span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#servicios">{t.hero.secondary}<span aria-hidden="true">↘</span></a>
+          </div>
+          <p class="hero-note"><span aria-hidden="true">✦</span>{t.hero.note}</p>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-card">
+            <div class="browser-bar"><span></span><span></span><span></span><div>juanaylola.com</div></div>
+            <div class="mockup-surface">
+              <div class="mockup-top"><span>J<span class="mockup-amp">&</span>L</span><span class="mockup-lines"><i></i><i></i><i></i></span></div>
+              <div class="mockup-content">
+                <p>{t.hero.mockupLabel}</p>
+                <strong>{t.hero.mockupTitle}</strong>
+                <span class="mockup-button">{t.hero.mockupAction} ↗</span>
+              </div>
+              <div class="mockup-art"><span class="art-sun"></span><span class="art-hill art-hill-one"></span><span class="art-hill art-hill-two"></span></div>
+            </div>
+          </div>
+          <div class="floating-stamp"><span>✳</span><small>Digital<br />with care</small></div>
+          <div class="hero-spark hero-spark-one">✳</div><div class="hero-spark hero-spark-two">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="servicios">
+      <div class="shell">
+        <div class="section-heading heading-grid">
+          <p class="eyebrow light"><span class="eyebrow-dot"></span>{t.services.eyebrow}</p>
+          <div><h2>{t.services.title}</h2><p>{t.services.intro}</p></div>
+        </div>
+        <div class="service-grid">
+          {t.services.items.map((item) => (
+            <article class="service-card">
+              <div class="service-card-top"><span>{item.number} / 04</span><span class="service-icon" aria-hidden="true">{item.icon}</span></div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="process section-pad">
+      <div class="shell process-grid">
+        <div class="process-heading">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.process.eyebrow}</p>
+          <h2>{t.process.title}</h2>
+          <span class="process-flower" aria-hidden="true">✳</span>
+        </div>
+        <div class="process-steps">
+          {t.process.items.map((item) => (
+            <div class="process-step"><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div><span aria-hidden="true">↗</span></div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="work section-pad" id="proyectos">
+      <div class="shell">
+        <div class="section-heading work-heading">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.work.eyebrow}</p>
+          <h2>{t.work.title}</h2>
+          <p>{allConcepts ? t.work.intro : t.work.introMixed}</p>
+        </div>
+        <div class="project-grid">
+          {projects.map((project) => (
+            <article class="project-card">
+              <a class="project-image-link" href={projectPath(project)} aria-label={`${project.data.kind === 'concept' ? t.work.view : t.work.viewReal}: ${project.data.name}`}>
+                <img src={project.data.previewImage} width="1200" height="800" alt={project.data.imageAlt} loading="lazy" />
+                <span class="project-arrow" aria-hidden="true">↗</span>
+              </a>
+              <div class="project-meta"><span>{project.data.category}</span><span>{project.data.kind === 'concept' ? t.work.concept : t.work.real}</span></div>
+              <h3><a href={projectPath(project)}>{project.data.name}</a></h3>
+              <p>{project.data.description}</p>
+              <a class="text-link project-link" href={projectPath(project)}>{project.data.kind === 'concept' ? t.work.view : t.work.viewReal}<span aria-hidden="true">↗</span></a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="story section-pad" id="historia">
+      <div class="shell story-grid">
+        <div class="story-copy">
+          <p class="eyebrow light"><span class="eyebrow-dot"></span>{t.story.eyebrow}</p>
+          <h2>{t.story.title}</h2>
+          <p>{t.story.text1}</p>
+          <p>{t.story.text2}</p>
+          <span class="story-signature" aria-hidden="true">J<span>&</span>L ✳</span>
+        </div>
+        <div class="cat-gallery">
+          {t.story.names.map((name, index) => (
+            <figure class:list={['cat-card', `cat-card-${index + 1}`]}>
+              <div class="cat-placeholder">
+                {petPhotos[index] ? (
+                  <img src={petPhotos[index] ?? undefined} alt={`${locale === 'es' ? 'Foto de' : 'Photo of'} ${name}`} loading="lazy" />
+                ) : (
+                  <><svg viewBox="0 0 140 150" fill="none" aria-hidden="true"><path d="M24 70 28 19 55 42c10-5 20-5 30 0l27-23 4 51c7 10 10 21 10 33 0 28-25 44-56 44s-56-16-56-44c0-12 3-23 10-33Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M48 92c4-4 10-4 14 0m16 0c4-4 10-4 14 0M67 105l3 3 3-3m-3 3v7m0 0c-4 4-8 5-13 2m13-2c4 4 8 5 13 2M37 109l-23-5m23 13-22 2m88-10 23-5m-23 13 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{t.story.photoSoon}</span></>
+                )}
+              </div>
+              <figcaption>{name}<span aria-hidden="true">✦</span></figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contacto">
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.contact.eyebrow}</p>
+          <h2>{t.contact.title}</h2>
+          <p>{t.contact.intro}</p>
+          <div class="contact-doodle" aria-hidden="true">✳</div>
+        </div>
+        <form class="contact-form" name="contact" method="POST" action={paths[locale].thanks} data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="language" value={locale} />
+          <p class="visually-hidden" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+          <div class="form-row">
+            <label>{t.contact.name}<input name="name" type="text" autocomplete="name" required /></label>
+            <label>{t.contact.email}<input name="email" type="email" autocomplete="email" required /></label>
+          </div>
+          <label>{t.contact.service}
+            <select name="service" required>
+              <option value="" disabled selected>{t.contact.servicePlaceholder}</option>
+              {t.contact.serviceOptions.map((option, index) => <option value={['landing-page', 'website-dashboard', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
+            </select>
+          </label>
+          <label>{t.contact.message}<textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} required></textarea></label>
+          <div class="form-bottom"><p>{t.contact.note}</p><button class="button button-dark" type="submit">{t.contact.submit}<span aria-hidden="true">↗</span></button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Juana &amp; Lola Digital">
+  <rect width="64" height="64" rx="17" fill="#253138"/>
+  <path d="M8 32 11 13l13 11c5-2 10-2 15 0L52 13l3 19c3 4 4 8 4 13 0 12-12 18-27 18S5 57 5 45c0-5 1-9 3-13Z" fill="#f7f4ed"/>
+  <path d="M20 41c2-2 5-2 7 0m10 0c2-2 5-2 7 0M29 48l3 2 3-2m-3 2v3" fill="none" stroke="#253138" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 17c2-2 6-2 8 1" fill="none" stroke="#df7964" stroke-width="4" stroke-linecap="round"/>
+</svg>

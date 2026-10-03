@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Concept workshop operations dashboard preview">
+  <rect width="1200" height="800" fill="#d9e1d9"/>
+  <rect x="67" y="59" width="1066" height="682" rx="16" fill="#f8f9f4"/>
+  <rect x="67" y="59" width="1066" height="37" rx="16" fill="#eef1ea"/>
+  <path d="M67 80h1066v16H67z" fill="#eef1ea"/>
+  <circle cx="96" cy="77" r="5" fill="#dca29b"/><circle cx="114" cy="77" r="5" fill="#d2d8d0"/><circle cx="132" cy="77" r="5" fill="#d2d8d0"/>
+  <rect x="486" y="70" width="227" height="16" rx="8" fill="#dee5db"/>
+  <rect x="67" y="96" width="1066" height="70" fill="#edf2ea"/>
+  <text x="104" y="141" fill="#2f4d44" font-family="Arial,sans-serif" font-size="25" font-weight="bold">taller.</text>
+  <text x="432" y="139" fill="#687f73" font-family="Arial,sans-serif" font-size="14">Resumen</text><text x="536" y="139" fill="#687f73" font-family="Arial,sans-serif" font-size="14">Pedidos</text><text x="634" y="139" fill="#687f73" font-family="Arial,sans-serif" font-size="14">Inventario</text>
+  <circle cx="1070" cy="132" r="19" fill="#d6ad91"/>
+  <text x="104" y="223" fill="#2f4d44" font-family="Arial,sans-serif" font-size="29" font-weight="bold">Todo en su lugar.</text>
+  <text x="105" y="251" fill="#84968a" font-family="Arial,sans-serif" font-size="14">Una vista clara del trabajo de hoy.</text>
+  <rect x="944" y="200" width="146" height="45" rx="6" fill="#466a5d"/><text x="969" y="228" fill="#fff" font-family="Arial,sans-serif" font-size="14">+ Nuevo pedido</text>
+  <rect x="104" y="288" width="305" height="120" rx="12" fill="#e6efe5"/>
+  <text x="127" y="321" fill="#5d7d6c" font-family="Arial,sans-serif" font-size="13">Pedidos activos</text><text x="127" y="375" fill="#2f4d44" font-family="Arial,sans-serif" font-size="44" font-weight="bold">18</text>
+  <path d="M312 365l27-23 21 10 27-30" fill="none" stroke="#6fa17c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="427" y="288" width="305" height="120" rx="12" fill="#f6e8dc"/>
+  <text x="450" y="321" fill="#a87c60" font-family="Arial,sans-serif" font-size="13">Por entregar</text><text x="450" y="375" fill="#614d41" font-family="Arial,sans-serif" font-size="44" font-weight="bold">07</text>
+  <circle cx="672" cy="350" r="29" fill="#eec9a9"/><path d="M672 332v20l13 9" fill="none" stroke="#9c7054" stroke-width="4" stroke-linecap="round"/>
+  <rect x="750" y="288" width="340" height="120" rx="12" fill="#e6e9f0"/>
+  <text x="773" y="321" fill="#708093" font-family="Arial,sans-serif" font-size="13">Productos a revisar</text><text x="773" y="375" fill="#3d4d60" font-family="Arial,sans-serif" font-size="44" font-weight="bold">03</text>
+  <rect x="104" y="441" width="986" height="253" rx="12" fill="#fff" stroke="#e4e9e1"/>
+  <text x="127" y="481" fill="#2f4d44" font-family="Arial,sans-serif" font-size="19" font-weight="bold">Pedidos recientes</text>
+  <text x="977" y="480" fill="#6d8a75" font-family="Arial,sans-serif" font-size="13">Ver todos ↗</text>
+  <path d="M127 506h940M127 561h940M127 616h940" stroke="#edf0e9"/>
+  <text x="139" y="537" fill="#435d52" font-family="Arial,sans-serif" font-size="14" font-weight="bold">#0291</text><text x="278" y="537" fill="#64756b" font-family="Arial,sans-serif" font-size="14">Mesa de roble</text><text x="638" y="537" fill="#829088" font-family="Arial,sans-serif" font-size="13">Hoy · 09:40</text><rect x="900" y="517" width="128" height="29" rx="14" fill="#e6f0e5"/><text x="921" y="536" fill="#568568" font-family="Arial,sans-serif" font-size="12">En progreso</text>
+  <text x="139" y="592" fill="#435d52" font-family="Arial,sans-serif" font-size="14" font-weight="bold">#0290</text><text x="278" y="592" fill="#64756b" font-family="Arial,sans-serif" font-size="14">Sillas a medida</text><text x="638" y="592" fill="#829088" font-family="Arial,sans-serif" font-size="13">Ayer · 16:15</text><rect x="900" y="572" width="128" height="29" rx="14" fill="#f6e9da"/><text x="928" y="591" fill="#a27a54" font-family="Arial,sans-serif" font-size="12">Pendiente</text>
+  <text x="139" y="647" fill="#435d52" font-family="Arial,sans-serif" font-size="14" font-weight="bold">#0289</text><text x="278" y="647" fill="#64756b" font-family="Arial,sans-serif" font-size="14">Estantería</text><text x="638" y="647" fill="#829088" font-family="Arial,sans-serif" font-size="13">Ayer · 11:10</text><rect x="900" y="627" width="128" height="29" rx="14" fill="#e6f0e5"/><text x="921" y="646" fill="#568568" font-family="Arial,sans-serif" font-size="12">En progreso</text>
+</svg>

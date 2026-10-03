@@ -1,0 +1,58 @@
+---
+import { copy, paths, type Locale } from '../lib/copy';
+
+interface Props {
+  locale: Locale;
+  alternatePaths: { es: string; en: string };
+}
+
+const { locale, alternatePaths } = Astro.props;
+const t = copy[locale];
+const otherLocale = locale === 'es' ? 'en' : 'es';
+const base = paths[locale].home;
+const links = [
+  { href: `${base}#servicios`, label: t.nav.services },
+  { href: `${base}#proyectos`, label: t.nav.work },
+  { href: `${base}#historia`, label: t.nav.story },
+  { href: `${base}#contacto`, label: t.nav.contact },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner shell">
+    <a class="brand" href={base} aria-label="Juana & Lola Digital">
+      <img src="/brand-mark.svg" width="42" height="42" alt="" />
+      <span>Juana <span class="brand-amp">&</span> Lola <small>Digital</small></span>
+    </a>
+
+    <nav class="desktop-nav" aria-label={locale === 'es' ? 'Navegación principal' : 'Main navigation'}>
+      {links.map((link) => <a href={link.href}>{link.label}</a>)}
+    </nav>
+
+    <a class="lang-switch desktop-lang" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale} aria-label={t.switchLabel}>
+      {otherLocale.toUpperCase()} <span aria-hidden="true">↗</span>
+    </a>
+
+    <details class="mobile-nav">
+      <summary aria-label={t.nav.menu}>
+        <span class="mobile-menu-label">{t.nav.menu}</span>
+        <span class="menu-glyph" aria-hidden="true"><i></i><i></i></span>
+      </summary>
+      <nav aria-label={locale === 'es' ? 'Navegación móvil' : 'Mobile navigation'}>
+        {links.map((link) => <a href={link.href}>{link.label}</a>)}
+        <a class="mobile-language" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale}>{t.switchLabel} ↗</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>('.mobile-nav').forEach((menu) => {
+    menu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => { menu.open = false; });
+    });
+    menu.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') menu.open = false;
+    });
+  });
+</script>
