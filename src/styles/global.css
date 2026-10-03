@@ -154,16 +154,23 @@ section[id] { scroll-margin-top: 78px; }
 .story-signature { display: block; margin-top: 30px; font-family: var(--font-display); font-size: 30px; font-weight: 800; letter-spacing: -.08em; }
 .story-signature span { color: #f6dfce; }
 .cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; align-items: center; transform: rotate(-3deg); }
-.cat-card { padding: 7px 7px 11px; background: #fff8ed; box-shadow: 0 14px 30px rgba(74,47,40,.15); }
+.cat-card { padding: 7px 7px 11px; background: #fff8ed; box-shadow: 0 14px 30px rgba(74,47,40,.15); transition: transform .35s ease, box-shadow .35s ease; }
 .cat-card-1 { transform: translateY(28px) rotate(-4deg); }
 .cat-card-2 { transform: translateY(-27px) rotate(5deg); }
 .cat-card-3 { transform: translateY(22px) rotate(2deg); }
-.cat-placeholder { display: flex; align-items: center; justify-content: center; flex-direction: column; aspect-ratio: .75; background: #f0c8b2; color: #994d46; }
+.cat-placeholder { display: flex; align-items: center; justify-content: center; flex-direction: column; aspect-ratio: .75; overflow: hidden; background: #f0c8b2; color: #994d46; }
 .cat-card-2 .cat-placeholder { background: #ddded0; color: #5b6959; }
 .cat-card-3 .cat-placeholder { background: #eac9a3; color: #8f634c; }
 .cat-placeholder svg { width: 78%; max-width: 120px; opacity: .75; }
-.cat-placeholder img { width: 100%; height: 100%; object-fit: cover; }
+.cat-placeholder img { width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
 .cat-placeholder span { max-width: 90%; margin-top: 10px; font-size: 9px; font-weight: 700; text-align: center; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .cat-card:hover { position: relative; z-index: 1; box-shadow: 0 22px 42px rgba(74,47,40,.24); }
+  .cat-card-1:hover { transform: translateY(28px) rotate(-4deg) scale(1.08); }
+  .cat-card-2:hover { transform: translateY(-27px) rotate(5deg) scale(1.08); }
+  .cat-card-3:hover { transform: translateY(22px) rotate(2deg) scale(1.08); }
+  .cat-card:hover .cat-placeholder img { transform: scale(1.12); }
+}
 .cat-card figcaption { display: flex; justify-content: space-between; padding: 9px 4px 0; font-family: var(--font-display); font-size: 15px; font-weight: 800; letter-spacing: -.04em; }
 .cat-card figcaption span { color: #c87560; font-size: 12px; }
 
