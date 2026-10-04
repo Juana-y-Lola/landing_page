@@ -38,10 +38,6 @@ order: 4
 
 Write the project details in the Markdown body. Add the preview image under `public/images/portfolio/`. Set `detailLink` to the generated local detail URL, matching the file's language and slug. For a public site, add `projectLink: https://example.com/`. To show an optional GitHub repository link, add `repositoryLink: https://github.com/owner/repo`. Both links appear on the homepage card and detail page. Set `kind: real` for real work; keep concept work clearly identified and avoid invented client claims or results.
 
-## Add the cat photos
-
-Place the photos under `public/images/cats/`, then replace the three `null` values in `src/lib/pets.ts` with their root-relative paths. The order is Juana, Lola, Simón. The existing photo frames and localized alternative text will be used automatically.
-
 ## Netlify form and launch
 
 1. Connect the repository to Netlify and set `juanaylola.com` as the primary HTTPS domain.
