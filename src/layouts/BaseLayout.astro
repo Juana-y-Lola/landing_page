@@ -70,7 +70,7 @@ const structuredData = [
   </head>
   <body>
     <a class="skip-link" href="#main-content">{locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
-    <Header locale={locale} alternatePaths={alternatePaths} />
+    <Header locale={locale} alternatePaths={alternatePaths} isHome={isHome} />
     <slot />
     <Footer locale={locale} />
   </body>

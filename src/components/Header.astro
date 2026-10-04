@@ -4,9 +4,10 @@ import { copy, paths, type Locale } from '../lib/copy';
 interface Props {
   locale: Locale;
   alternatePaths: { es: string; en: string };
+  isHome?: boolean;
 }
 
-const { locale, alternatePaths } = Astro.props;
+const { locale, alternatePaths, isHome = false } = Astro.props;
 const t = copy[locale];
 const otherLocale = locale === 'es' ? 'en' : 'es';
 const base = paths[locale].home;
@@ -19,7 +20,7 @@ const links = [
 ];
 ---
 
-<header class="site-header">
+<header class="site-header" data-home-page={isHome ? 'true' : undefined}>
   <div class="header-inner shell">
     <a class="brand" href={base} aria-label="Juana & Lola Digital">
       <img src="/brand-mark.svg" width="42" height="42" alt="" />
@@ -30,7 +31,7 @@ const links = [
       {links.map((link) => <a href={link.href}>{link.label}</a>)}
     </nav>
 
-    <a class="lang-switch desktop-lang" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale} aria-label={t.switchLabel}>
+    <a class="lang-switch desktop-lang" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale} aria-label={t.switchLabel} data-language-switch>
       {otherLocale.toUpperCase()} <span aria-hidden="true">↗</span>
     </a>
 
@@ -41,13 +42,53 @@ const links = [
       </summary>
       <nav aria-label={locale === 'es' ? 'Navegación móvil' : 'Mobile navigation'}>
         {links.map((link) => <a href={link.href}>{link.label}</a>)}
-        <a class="mobile-language" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale}>{t.switchLabel} ↗</a>
+        <a class="mobile-language" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale} data-language-switch>{t.switchLabel} ↗</a>
       </nav>
     </details>
   </div>
 </header>
 
 <script>
+  const homeHeader = document.querySelector<HTMLElement>('.site-header[data-home-page="true"]');
+  if (homeHeader) {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>('#main-content > section[id]'));
+    const languageLinks = Array.from(homeHeader.querySelectorAll<HTMLAnchorElement>('[data-language-switch]'));
+    const destinations = languageLinks.map((link) => ({ link, base: link.getAttribute('href') ?? '' }));
+
+    if (sections.length) {
+      const updateLanguageLinks = () => {
+        const headerHeight = homeHeader.getBoundingClientRect().height;
+        const centerY = headerHeight + Math.max(0, window.innerHeight - headerHeight) / 2;
+        let visibleSection = sections[0];
+
+        for (const section of sections) {
+          if (section.getBoundingClientRect().top > centerY) break;
+          visibleSection = section;
+        }
+
+        for (const { link, base } of destinations) {
+          link.href = `${base}#${visibleSection.id}`;
+        }
+      };
+
+      let updateScheduled = false;
+      const scheduleUpdate = () => {
+        if (updateScheduled) return;
+        updateScheduled = true;
+        requestAnimationFrame(() => {
+          updateScheduled = false;
+          updateLanguageLinks();
+        });
+      };
+
+      window.addEventListener('scroll', scheduleUpdate, { passive: true });
+      window.addEventListener('resize', scheduleUpdate);
+      window.addEventListener('load', updateLanguageLinks, { once: true });
+      languageLinks.forEach((link) => link.addEventListener('click', updateLanguageLinks));
+      updateLanguageLinks();
+    }
+  }
+
   document.querySelectorAll<HTMLDetailsElement>('.mobile-nav').forEach((menu) => {
     menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => { menu.open = false; });
