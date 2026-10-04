@@ -128,6 +128,10 @@ section[id] { scroll-margin-top: 78px; }
 .process-step > span:last-child { color: #ad6251; font-size: 22px; line-height: 1; }
 .process-step h3 { font-family: var(--font-display); font-size: 23px; letter-spacing: -.04em; line-height: 1.25; }
 .process-step p { max-width: 380px; margin-top: 8px; color: var(--ink-soft); font-size: 13px; line-height: 1.75; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .process-step { transition: transform .25s ease; }
+  .process-step:hover { transform: translateX(6px); }
+}
 
 .work { background: var(--paper); }
 .work-heading { max-width: 630px; }
