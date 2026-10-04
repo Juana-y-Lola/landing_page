@@ -3,7 +3,7 @@ language: es
 translationKey: booking
 name: Agenda del estudio
 description: Una web de reservas con un panel sencillo para organizar citas, servicios y disponibilidad.
-link: /proyectos/agenda-del-estudio/
+detailLink: /proyectos/agenda-del-estudio/
 previewImage: /images/portfolio/booking.svg
 imageAlt: Vista conceptual de un panel de reservas con calendario y tarjetas de citas.
 category: Web + panel de administración

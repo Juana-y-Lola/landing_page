@@ -11,8 +11,3 @@ export async function getProjects(locale: Locale) {
 export function projectSlug(entry: PortfolioEntry) {
   return entry.id.split('/').at(-1) ?? entry.id;
 }
-
-export function projectPath(entry: PortfolioEntry) {
-  const slug = projectSlug(entry);
-  return entry.data.language === 'es' ? `/proyectos/${slug}/` : `/en/projects/${slug}/`;
-}

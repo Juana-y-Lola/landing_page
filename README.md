@@ -27,7 +27,7 @@ language: es
 translationKey: my-project
 name: Nombre del proyecto
 description: Una descripción breve para la tarjeta y los buscadores.
-link: /proyectos/my-project/
+detailLink: /proyectos/my-project/
 previewImage: /images/portfolio/my-project.svg
 imageAlt: Descripción de la imagen de vista previa.
 category: Landing page
@@ -36,7 +36,7 @@ order: 4
 ---
 ```
 
-Write the project details in the Markdown body. Add the preview image under `public/images/portfolio/`. For a concept, set `link` to its generated detail URL. For real work with a public site, set `kind: real` and use the live HTTPS URL as `link`; the detail page will show a “Visit project” link. The portfolio cards always lead to the local detail page. Keep concept work clearly identified and avoid invented client claims or results.
+Write the project details in the Markdown body. Add the preview image under `public/images/portfolio/`. Set `detailLink` to the generated local detail URL, matching the file's language and slug. For real work with a public site, set `kind: real` and add `projectLink: https://example.com/`. The homepage card and detail page will then show a separate link to the live site. Keep concept work clearly identified and avoid invented client claims or results.
 
 ## Add the cat photos
 

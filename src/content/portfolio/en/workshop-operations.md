@@ -3,7 +3,7 @@ language: en
 translationKey: workshop
 name: Workshop operations
 description: A custom tool to keep orders, tasks, and stock in one clear place.
-link: /en/projects/workshop-operations/
+detailLink: /en/projects/workshop-operations/
 previewImage: /images/portfolio/workshop.svg
 imageAlt: Concept preview of an operations app showing orders, tasks, and stock.
 category: Custom software

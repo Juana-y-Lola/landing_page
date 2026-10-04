@@ -52,6 +52,7 @@ export const copy = {
       real: 'Proyecto real',
       view: 'Ver concepto',
       viewReal: 'Ver proyecto',
+      visitSite: 'Visitar web',
     },
     story: {
       eyebrow: 'Detrás del nombre',
@@ -125,6 +126,7 @@ export const copy = {
       real: 'Real project',
       view: 'Explore concept',
       viewReal: 'View project',
+      visitSite: 'Visit website',
     },
     story: {
       eyebrow: 'Behind the name',

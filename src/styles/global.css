@@ -144,7 +144,7 @@ section[id] { scroll-margin-top: 78px; }
 .project-card h3 { margin-top: 12px; font-family: var(--font-display); font-size: 27px; letter-spacing: -.055em; line-height: 1.2; }
 .project-card h3 a:hover { color: #ae5b49; }
 .project-card > p { margin-top: 12px; color: var(--ink-soft); font-size: 14px; line-height: 1.75; }
-.project-link { margin-top: 22px; }
+.project-links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; margin-top: 22px; }
 
 .story { overflow: hidden; background: #ce806c; color: var(--ink); }
 .story-grid { display: grid; grid-template-columns: 43% 57%; gap: 55px; align-items: center; }

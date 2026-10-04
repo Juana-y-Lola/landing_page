@@ -3,7 +3,7 @@ language: en
 translationKey: cafe
 name: Neighborhood café
 description: A welcoming landing page for a local café to share its menu, atmosphere, and location.
-link: /en/projects/neighborhood-cafe/
+detailLink: /en/projects/neighborhood-cafe/
 previewImage: /images/portfolio/cafe.svg
 imageAlt: Concept preview of a café website in cream and terracotta tones.
 category: Landing page

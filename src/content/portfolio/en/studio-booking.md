@@ -3,7 +3,7 @@ language: en
 translationKey: booking
 name: Studio booking
 description: A booking website with a simple dashboard for appointments, services, and availability.
-link: /en/projects/studio-booking/
+detailLink: /en/projects/studio-booking/
 previewImage: /images/portfolio/booking.svg
 imageAlt: Concept preview of a booking dashboard with a calendar and appointment cards.
 category: Website + admin dashboard

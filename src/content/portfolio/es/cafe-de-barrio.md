@@ -3,7 +3,7 @@ language: es
 translationKey: cafe
 name: Café de barrio
 description: Una landing page cálida para que un café local muestre su carta, su ambiente y cómo encontrarlo.
-link: /proyectos/cafe-de-barrio/
+detailLink: /proyectos/cafe-de-barrio/
 previewImage: /images/portfolio/cafe.svg
 imageAlt: Vista conceptual de una web de cafetería con colores crema y terracota.
 category: Landing page

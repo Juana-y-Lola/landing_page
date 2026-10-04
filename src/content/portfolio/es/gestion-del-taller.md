@@ -3,7 +3,7 @@ language: es
 translationKey: workshop
 name: Gestión del taller
 description: Una herramienta a medida para seguir pedidos, tareas e inventario sin perder el hilo.
-link: /proyectos/gestion-del-taller/
+detailLink: /proyectos/gestion-del-taller/
 previewImage: /images/portfolio/workshop.svg
 imageAlt: Vista conceptual de una aplicación de gestión con pedidos, tareas y existencias.
 category: Software a medida
