@@ -29,17 +29,21 @@ const { Content } = await render(entry);
     <section class="project-hero section-pad">
       <div class="shell">
         <a class="back-link" href={`${paths[locale].home}#proyectos`}><span aria-hidden="true">←</span> {t.detail.back}</a>
-        <div class="project-intro">
-          <div><p class="eyebrow"><span class="eyebrow-dot"></span>{entry.data.kind === 'concept' ? t.detail.concept : t.work.real} · {entry.data.category}</p><h1>{entry.data.name}</h1></div>
-          <p>{entry.data.description}</p>
+        <div class="project-hero-grid">
+          <div class="project-intro">
+            <p class="eyebrow"><span class="eyebrow-dot"></span>{entry.data.kind === 'concept' ? t.detail.concept : t.work.real} · {entry.data.category}</p>
+            <h1>{entry.data.name}</h1>
+            <p class="project-subtitle">{entry.data.description}</p>
+            {entry.data.projectLink && <a class="text-link project-visit" href={entry.data.projectLink} target="_blank" rel="noopener noreferrer">{t.work.visitSite}<span aria-hidden="true">↗</span></a>}
+          </div>
+          <div class="project-hero-image"><img src={entry.data.previewImage} width="1200" height="800" alt={entry.data.imageAlt} /></div>
         </div>
-        <div class="project-hero-image"><img src={entry.data.previewImage} width="1200" height="800" alt={entry.data.imageAlt} /></div>
       </div>
     </section>
     <section class="project-body section-pad">
       <div class="shell project-body-grid">
         <div class="project-aside"><p class="eyebrow"><span class="eyebrow-dot"></span>{t.detail.overview}</p><span aria-hidden="true">✳</span></div>
-        <article class="prose"><Content />{entry.data.projectLink && <p><a class="text-link" href={entry.data.projectLink} rel="noopener noreferrer">{t.detail.visit}<span aria-hidden="true">↗</span></a></p>}</article>
+        <article class="prose"><Content /></article>
       </div>
     </section>
     <section class="project-next section-pad"><div class="shell"><p>{t.detail.next}</p><a class="button button-dark" href={`${paths[locale].home}#contacto`}>{t.detail.nextAction}<span aria-hidden="true">↗</span></a></div></section>

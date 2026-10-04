@@ -13,7 +13,7 @@ const allConcepts = projects.every((project) => project.data.kind === 'concept')
 
 <BaseLayout locale={locale} title={t.title} description={t.description} canonicalPath={paths[locale].home} alternatePaths={{ es: '/', en: '/en/' }} isHome>
   <main id="main-content">
-    <section class="hero section-pad">
+    <section class="hero section-pad" id="inicio">
       <div class="shell hero-grid">
         <div class="hero-copy">
           <p class="eyebrow"><span class="eyebrow-dot"></span>{t.hero.eyebrow}</p>
@@ -113,6 +113,7 @@ const allConcepts = projects.every((project) => project.data.kind === 'concept')
           <h2>{t.story.title}</h2>
           <p>{t.story.text1}</p>
           <p>{t.story.text2}</p>
+          <p>{t.story.text3}</p>
           <span class="story-signature" aria-hidden="true">J<span>&</span>L ✳</span>
         </div>
         <div class="cat-gallery">

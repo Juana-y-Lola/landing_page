@@ -11,6 +11,7 @@ const t = copy[locale];
 const otherLocale = locale === 'es' ? 'en' : 'es';
 const base = paths[locale].home;
 const links = [
+  { href: `${base}#inicio`, label: t.nav.home },
   { href: `${base}#servicios`, label: t.nav.services },
   { href: `${base}#proyectos`, label: t.nav.work },
   { href: `${base}#historia`, label: t.nav.story },

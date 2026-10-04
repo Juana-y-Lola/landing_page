@@ -9,7 +9,7 @@ export const copy = {
   es: {
     title: 'Juana & Lola Digital — Páginas web, software a medida y ayuda informática para negocios locales',
     description: 'Páginas web con personalidad, herramientas a medida y ayuda tecnológica clara para pequeños negocios. Juana & Lola Digital convierte ideas en soluciones útiles.',
-    nav: { services: 'Servicios', work: 'Proyectos', story: 'La historia', contact: 'Contacto', menu: 'Menú' },
+    nav: { home: 'Inicio', services: 'Servicios', work: 'Proyectos', story: 'La historia', contact: 'Contacto', menu: 'Menú' },
     switchLabel: 'Read in English',
     hero: {
       eyebrow: 'Diseño web · Software · Consultoría IT',
@@ -57,8 +57,9 @@ export const copy = {
     story: {
       eyebrow: 'Detrás del nombre',
       title: 'Un estudio con una historia muy personal.',
-      text1: 'Juana y Lola son las dos gatas que comparten mi vida. Su curiosidad, su calma y su forma de hacer suyo cada rincón inspiraron el nombre de este proyecto.',
-      text2: 'Simón también formó parte de esta pequeña familia. Aunque ya no está, sigue presente en su historia y en el cariño con el que nació Juana & Lola Digital.',
+      text1: 'Hola! Soy Sebastian Castañeda, Ingeniero de Software con mas de 15 años contruyendo soluciones de software.',
+      text2: 'Juana y Lola son las dos gatas que comparten mi vida y suelen acompañarme durante horas mientras trabajo en mis proyectos. Su curiosidad, su calma y su forma de hacer suyo cada rincón inspiraron el nombre de este proyecto.',
+      text3: 'Simón también formó parte de esta pequeña familia. Aunque ya no está, sigue presente en su historia y en el cariño con el que nació Juana & Lola Digital.',
       photoSoon: 'Su foto llegará pronto',
       names: ['Juana', 'Lola', 'Simón'],
     },
@@ -76,14 +77,14 @@ export const copy = {
       submit: 'Enviar mensaje',
       note: 'Tus datos se usarán únicamente para responder a tu consulta.',
     },
-    detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', overview: 'La idea', visit: 'Visitar proyecto', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
+    detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', overview: 'La idea', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
     thanks: { title: '¡Mensaje enviado!', description: 'Gracias por escribirme. He recibido tu mensaje y te responderé lo antes posible.', back: 'Volver al inicio' },
     footer: { line: 'Ideas digitales para negocios reales.', rights: 'Todos los derechos reservados.' },
   },
   en: {
     title: 'Juana & Lola Digital - Websites, custom software, and IT help for local businesses',
     description: 'Distinctive websites, custom tools, and straightforward technology advice for small businesses. Juana & Lola Digital turns ideas into useful digital solutions.',
-    nav: { services: 'Services', work: 'Projects', story: 'Our story', contact: 'Contact', menu: 'Menu' },
+    nav: { home: 'Home', services: 'Services', work: 'Projects', story: 'Our story', contact: 'Contact', menu: 'Menu' },
     switchLabel: 'Leer en español',
     hero: {
       eyebrow: 'Web design · Software · IT consulting',
@@ -131,8 +132,9 @@ export const copy = {
     story: {
       eyebrow: 'Behind the name',
       title: 'A studio with a very personal story.',
-      text1: 'Juana and Lola are the two cats who share my life. Their curiosity, their calm, and the way they make every space their own inspired this project’s name.',
-      text2: 'Simón was part of this little family too. Although he is no longer here, he remains part of its story and of the affection behind Juana & Lola Digital.',
+      text1: 'Hi! I’m Sebastian Castañeda, a software engineer with more than 15 years of experience building software solutions.',
+      text2: 'Juana and Lola are the two cats who share my life and often keep me company for hours while I work on my projects. Their curiosity, their calm, and the way they make every space their own inspired this project’s name.',
+      text3: 'Simón was part of this little family too. Although he is no longer here, he remains part of its story and of the affection behind Juana & Lola Digital.',
       photoSoon: 'Photo coming soon',
       names: ['Juana', 'Lola', 'Simón'],
     },
@@ -150,7 +152,7 @@ export const copy = {
       submit: 'Send message',
       note: 'Your details will only be used to reply to your enquiry.',
     },
-    detail: { back: 'Back to projects', concept: 'Concept project', overview: 'The idea', visit: 'Visit project', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
+    detail: { back: 'Back to projects', concept: 'Concept project', overview: 'The idea', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
     thanks: { title: 'Message sent!', description: 'Thank you for getting in touch. I have received your message and will reply as soon as I can.', back: 'Back to home' },
     footer: { line: 'Digital ideas for real businesses.', rights: 'All rights reserved.' },
   },

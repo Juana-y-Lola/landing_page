@@ -1,7 +1,7 @@
 ---
 language: es
 translationKey: personal-site
-name: Sebastian Castañeda Dev
+name: Sebastian Castañeda dev
 description: Mi web personal y blog, donde reúno mi experiencia, proyectos y artículos.
 detailLink: /proyectos/web-personal-y-blog/
 projectLink: https://sebastiancastaneda.dev/
