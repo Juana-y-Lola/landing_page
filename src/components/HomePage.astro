@@ -151,7 +151,7 @@ const contactEmail = 'hola@juanaylola.com';
             <span class="contact-email-address">{contactEmail}</span>
           </a>
         </div>
-        <form class="contact-form" name="contact" method="POST" action={paths[locale].thanks} data-netlify="true" netlify-honeypot="bot-field">
+        <form class="contact-form" name="contact" method="POST" action={paths[locale].thanks} data-netlify="true" netlify-honeypot="bot-field" data-locale={locale}>
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="language" value={locale} />
           <p class="visually-hidden" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
@@ -172,3 +172,30 @@ const contactEmail = 'hola@juanaylola.com';
     </section>
   </main>
 </BaseLayout>
+
+<script>
+  const contactForm = document.querySelector<HTMLFormElement>('.contact-form[data-locale="es"]');
+
+  if (contactForm) {
+    contactForm.addEventListener('invalid', (event) => {
+      const field = event.target;
+      if (!(field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement)) return;
+
+      if (field.validity.valueMissing) {
+        field.setCustomValidity('Completa este campo.');
+      } else if (field instanceof HTMLInputElement && field.type === 'email' && field.validity.typeMismatch) {
+        field.setCustomValidity('Introduce un correo electrónico válido.');
+      }
+    }, true);
+
+    const clearValidationMessage = (event: Event) => {
+      const field = event.target;
+      if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) {
+        field.setCustomValidity('');
+      }
+    };
+
+    contactForm.addEventListener('input', clearValidationMessage);
+    contactForm.addEventListener('change', clearValidationMessage);
+  }
+</script>
