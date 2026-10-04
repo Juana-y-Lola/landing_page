@@ -36,7 +36,7 @@ order: 4
 ---
 ```
 
-Write the project details in the Markdown body. Add the preview image under `public/images/portfolio/`. Set `detailLink` to the generated local detail URL, matching the file's language and slug. For real work with a public site, set `kind: real` and add `projectLink: https://example.com/`. The homepage card and detail page will then show a separate link to the live site. Keep concept work clearly identified and avoid invented client claims or results.
+Write the project details in the Markdown body. Add the preview image under `public/images/portfolio/`. Set `detailLink` to the generated local detail URL, matching the file's language and slug. For a public site, add `projectLink: https://example.com/`. To show an optional GitHub repository link, add `repositoryLink: https://github.com/owner/repo`. Both links appear on the homepage card and detail page. Set `kind: real` for real work; keep concept work clearly identified and avoid invented client claims or results.
 
 ## Add the cat photos
 

@@ -11,6 +11,7 @@ const portfolio = defineCollection({
     description: z.string(),
     detailLink: z.string().startsWith('/'),
     projectLink: z.url({ protocol: /^https$/ }).optional(),
+    repositoryLink: z.url({ protocol: /^https$/ }).optional(),
     previewImage: z.string(),
     imageAlt: z.string(),
     category: z.string(),

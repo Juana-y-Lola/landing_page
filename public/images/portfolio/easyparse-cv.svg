@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Illustrated preview of the EasyParse CV app">
+  <rect width="1200" height="800" fill="#e8dfd1"/>
+  <rect x="62" y="48" width="1076" height="704" rx="15" fill="#f5efe2"/>
+  <path d="M77 48h1046a15 15 0 0 1 15 15v43H62V63a15 15 0 0 1 15-15Z" fill="#e9cdb8"/>
+  <circle cx="90" cy="77" r="6" fill="#be8469"/>
+  <circle cx="111" cy="77" r="6" fill="#d3a58d"/>
+  <circle cx="132" cy="77" r="6" fill="#d3a58d"/>
+  <rect x="421" y="63" width="358" height="27" rx="13.5" fill="#f1dfd0"/>
+  <text x="600" y="82" fill="#654e42" font-family="Arial,sans-serif" font-size="15" text-anchor="middle">easyparse-cv.vercel.app</text>
+  <text x="600" y="140" fill="#704e3e" font-family="Courier New,monospace" font-size="14" letter-spacing="2" text-anchor="middle">BUILT FOR EXPERIMENTATION AND LEARNING</text>
+  <path d="M62 166h1076" stroke="#c4b8aa"/>
+  <text x="154" y="211" fill="#272321" font-family="Courier New,monospace" font-size="32" font-weight="700">EASYPARSE<tspan fill="#b2795d">.CV</tspan></text>
+  <text x="1010" y="210" fill="#51483f" font-family="Courier New,monospace" font-size="17" text-anchor="end">GITHUB ↗</text>
+  <path d="M62 236h1076" stroke="#c4b8aa"/>
+  <text x="205" y="302" fill="#38332e" font-family="Courier New,monospace" font-size="23">Drop in a CV PDF and get personal info,</text>
+  <text x="205" y="336" fill="#38332e" font-family="Courier New,monospace" font-size="23">experience, education and skills back.</text>
+  <rect x="205" y="373" width="790" height="215" fill="#f0e9dc" stroke="#aaa194" stroke-width="2" stroke-dasharray="6 6"/>
+  <g fill="none" stroke="#4d463f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M579 451c-11-25 10-44 28-33 9-19 38-11 39 10 18-2 31 20 18 34"/>
+    <path d="M621 479v-40m-14 14 14-14 14 14"/>
+  </g>
+  <text x="600" y="523" fill="#38332e" font-family="Courier New,monospace" font-size="22" font-weight="700" text-anchor="middle">Drag &amp; drop your CV here</text>
+  <text x="600" y="554" fill="#6d6155" font-family="Courier New,monospace" font-size="14" letter-spacing="2" text-anchor="middle">PDF ONLY, UP TO 4 MB</text>
+  <text x="205" y="631" fill="#665b51" font-family="Courier New,monospace" font-size="15">Processed in memory. No third-party services.</text>
+  <rect x="855" y="606" width="140" height="43" rx="3" fill="#c59d83"/>
+  <text x="925" y="634" fill="#fffaf3" font-family="Courier New,monospace" font-size="18" text-anchor="middle">Parse CV</text>
+  <path d="M62 692h1076" stroke="#c4b8aa"/>
+  <text x="600" y="724" fill="#796d61" font-family="Courier New,monospace" font-size="14" text-anchor="middle">EASYPARSE.CV · PDF DATA EXTRACTION</text>
+</svg>
