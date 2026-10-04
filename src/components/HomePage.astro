@@ -167,6 +167,7 @@ const contactEmail = 'hola@juanaylola.com';
           </label>
           <label><span class="field-label">{t.contact.message}</span><textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} required></textarea></label>
           <div class="form-bottom"><p>{t.contact.note}</p><button class="button button-dark" type="submit"><span class="submit-label">{t.contact.submit}</span><span aria-hidden="true">↗</span></button></div>
+          <p class="form-error" role="alert" hidden>{t.contact.error}</p>
         </form>
       </div>
     </section>
@@ -179,21 +180,38 @@ const contactEmail = 'hola@juanaylola.com';
   if (contactForm) {
     const submitButton = contactForm.querySelector<HTMLButtonElement>('button[type="submit"]');
     const submitLabel = submitButton?.querySelector<HTMLElement>('.submit-label');
+    const formError = contactForm.querySelector<HTMLElement>('.form-error');
     const originalLabel = submitLabel?.textContent ?? '';
     let isSubmitting = false;
 
-    contactForm.addEventListener('submit', (event) => {
-      if (isSubmitting) {
-        event.preventDefault();
-        return;
-      }
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (isSubmitting) return;
 
       isSubmitting = true;
+      if (formError) formError.hidden = true;
       if (submitLabel) submitLabel.textContent = contactForm.dataset.sendingLabel ?? originalLabel;
-      // Let the browser start its native form submission before disabling the submitter.
-      window.setTimeout(() => {
-        if (submitButton && isSubmitting) submitButton.disabled = true;
-      }, 0);
+      if (submitButton) submitButton.disabled = true;
+
+      const body = new URLSearchParams();
+      new FormData(contactForm).forEach((value, key) => {
+        if (typeof value === 'string') body.append(key, value);
+      });
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString(),
+        });
+        if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+        window.location.assign(contactForm.action);
+      } catch {
+        isSubmitting = false;
+        if (submitButton) submitButton.disabled = false;
+        if (submitLabel) submitLabel.textContent = originalLabel;
+        if (formError) formError.hidden = false;
+      }
     });
 
     window.addEventListener('pageshow', () => {

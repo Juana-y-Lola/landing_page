@@ -202,6 +202,7 @@ section[id] { scroll-margin-top: 78px; }
 .form-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .form-bottom p { max-width: 260px; color: #66776b; font-size: 11px; line-height: 1.5; }
 .form-bottom .button { flex: none; border-radius: 8px; }
+.form-error { color: #a43f30; font-size: 13px; line-height: 1.5; }
 
 .site-footer { background: #1b282e; color: #e7ebe6; }
 .footer-inner { display: flex; justify-content: space-between; gap: 30px; padding-block: 47px; }
