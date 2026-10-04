@@ -58,7 +58,7 @@ export const copy = {
     story: {
       eyebrow: 'Detrás del nombre',
       title: 'Un estudio con una historia muy personal.',
-      text1: 'Hola! Soy Sebastian Castañeda, Ingeniero de Software con mas de 15 años contruyendo soluciones de software.',
+      text1: 'Hola! Soy Sebastian Castañeda, Ingeniero de Software con mas de 15 años contruyendo soluciones digitales.',
       text2: 'Juana y Lola son las dos gatas que comparten mi vida y suelen acompañarme durante horas mientras trabajo en mis proyectos. Su curiosidad, su calma y su forma de hacer suyo cada rincón inspiraron el nombre de este proyecto.',
       text3: 'Simón también formó parte de esta pequeña familia. Aunque ya no está, sigue presente en su historia y en el cariño con el que nació Juana & Lola Digital.',
       photoSoon: 'Su foto llegará pronto',
@@ -79,6 +79,7 @@ export const copy = {
       message: 'Tu mensaje',
       messagePlaceholder: 'Háblame un poco de tu negocio y de tu idea...',
       submit: 'Enviar mensaje',
+      sending: 'Enviando…',
       note: 'Tus datos se usarán únicamente para responder a tu consulta.',
     },
     detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', overview: 'La idea', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
@@ -137,7 +138,7 @@ export const copy = {
     story: {
       eyebrow: 'Behind the name',
       title: 'A studio with a very personal story.',
-      text1: 'Hi! I’m Sebastian Castañeda, a software engineer with more than 15 years of experience building software solutions.',
+      text1: 'Hi! I’m Sebastian Castañeda, a software engineer with more than 15 years of experience building digital solutions.',
       text2: 'Juana and Lola are the two cats who share my life and often keep me company for hours while I work on my projects. Their curiosity, their calm, and the way they make every space their own inspired this project’s name.',
       text3: 'Simón was part of this little family too. Although he is no longer here, he remains part of its story and of the affection behind Juana & Lola Digital.',
       photoSoon: 'Photo coming soon',
@@ -158,6 +159,7 @@ export const copy = {
       message: 'Your message',
       messagePlaceholder: 'Tell me a little about your business and your idea...',
       submit: 'Send message',
+      sending: 'Sending…',
       note: 'Your details will only be used to reply to your enquiry.',
     },
     detail: { back: 'Back to projects', concept: 'Concept project', overview: 'The idea', next: 'Have a similar idea?', nextAction: 'Let’s talk' },

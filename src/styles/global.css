@@ -64,9 +64,10 @@ section[id] { scroll-margin-top: 78px; }
 .hero-lead { max-width: 530px; margin-top: 30px; color: var(--ink-soft); font-size: clamp(16px, 1.3vw, 19px); line-height: 1.8; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 34px; }
 .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; min-height: 54px; padding: 15px 20px 15px 24px; border: 1px solid transparent; border-radius: 4px; font-size: 12px; font-weight: 800; line-height: 1.25; transition: transform .2s ease, background .2s ease, box-shadow .2s ease; }
-.button span { font-size: 18px; font-weight: 400; line-height: .6; }
+.button > span[aria-hidden="true"] { font-size: 18px; font-weight: 400; line-height: .6; }
 .button-dark { background: var(--ink); color: #fff; box-shadow: 0 8px 18px rgba(37,49,56,.09); }
 .button-dark:hover { transform: translateY(-2px); background: #33454d; box-shadow: 0 12px 22px rgba(37,49,56,.15); }
+.contact-form .button:disabled { cursor: wait; opacity: .7; transform: none; box-shadow: none; }
 .text-link { display: inline-flex; align-items: center; gap: 9px; width: fit-content; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 12px; font-weight: 800; transition: gap .2s ease, color .2s ease; }
 .text-link:hover { gap: 16px; color: #b4503f; }
 .text-link span { font-size: 17px; font-weight: 400; line-height: .8; }
