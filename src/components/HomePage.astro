@@ -10,6 +10,7 @@ const t = copy[locale];
 const projects = await getProjects(locale);
 const allConcepts = projects.every((project) => project.data.kind === 'concept');
 const hasConcepts = projects.some((project) => project.data.kind === 'concept');
+const contactEmail = 'hola@juanaylola.com';
 ---
 
 <BaseLayout locale={locale} title={t.title} description={t.description} canonicalPath={paths[locale].home} alternatePaths={{ es: '/', en: '/en/' }} isHome>
@@ -142,23 +143,29 @@ const hasConcepts = projects.some((project) => project.data.kind === 'concept');
           <p class="eyebrow"><span class="eyebrow-dot"></span>{t.contact.eyebrow}</p>
           <h2>{t.contact.title}</h2>
           <p>{t.contact.intro}</p>
-          <div class="contact-doodle" aria-hidden="true">✳</div>
+          <ul class="contact-benefits">
+            {t.contact.benefits.map((benefit) => <li><span aria-hidden="true">✦</span>{benefit}</li>)}
+          </ul>
+          <a class="contact-email-card" href={`mailto:${contactEmail}`}>
+            <span class="contact-email-label">EMAIL</span>
+            <span class="contact-email-address">{contactEmail}</span>
+          </a>
         </div>
         <form class="contact-form" name="contact" method="POST" action={paths[locale].thanks} data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="language" value={locale} />
           <p class="visually-hidden" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
           <div class="form-row">
-            <label>{t.contact.name}<input name="name" type="text" autocomplete="name" required /></label>
-            <label>{t.contact.email}<input name="email" type="email" autocomplete="email" required /></label>
+            <label><span class="field-label">{t.contact.name}</span><input name="name" type="text" autocomplete="name" placeholder={t.contact.namePlaceholder} required /></label>
+            <label><span class="field-label">{t.contact.email}</span><input name="email" type="email" autocomplete="email" placeholder={t.contact.emailPlaceholder} required /></label>
           </div>
-          <label>{t.contact.service}
+          <label><span class="field-label">{t.contact.service}</span>
             <select name="service" required>
               <option value="" disabled selected>{t.contact.servicePlaceholder}</option>
-              {t.contact.serviceOptions.map((option, index) => <option value={['landing-page', 'website-dashboard', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
+              {t.contact.serviceOptions.map((option, index) => <option value={['free-consultation', 'website', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
             </select>
           </label>
-          <label>{t.contact.message}<textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} required></textarea></label>
+          <label><span class="field-label">{t.contact.message}</span><textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} required></textarea></label>
           <div class="form-bottom"><p>{t.contact.note}</p><button class="button button-dark" type="submit">{t.contact.submit}<span aria-hidden="true">↗</span></button></div>
         </form>
       </div>
