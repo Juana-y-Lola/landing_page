@@ -42,7 +42,9 @@ const links = [
       </summary>
       <nav aria-label={locale === 'es' ? 'Navegación móvil' : 'Mobile navigation'}>
         {links.map((link) => <a href={link.href}>{link.label}</a>)}
-        <a class="mobile-language" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale} data-language-switch>{t.switchLabel} ↗</a>
+        <a class="lang-switch mobile-language" href={alternatePaths[otherLocale]} hreflang={otherLocale} lang={otherLocale} aria-label={t.switchLabel} data-language-switch>
+          {otherLocale.toUpperCase()} <span aria-hidden="true">↗</span>
+        </a>
       </nav>
     </details>
   </div>
