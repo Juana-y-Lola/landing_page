@@ -28,7 +28,7 @@ export const copy = {
       title: 'Tecnología que trabaja para ti.',
       intro: 'Desde una primera página hasta una herramienta hecha a medida: cada solución parte de lo que tu negocio necesita de verdad.',
       items: [
-        { number: '01', icon: '✳', title: 'Una página web para presentar tu negocio', paragraphs: ['Una página clara y atractiva donde las personas pueden conocer lo que ofreces y ponerse en contacto contigo.', 'La preparamos para que Google y las herramientas de IA puedan entenderla mejor, complementado tu presencia digital en junto con Instagram, Google Maps y otras plataformas donde tu negocio o emprendimiento tenga presencia.'] },
+        { number: '01', icon: '✳', title: 'Una página web para presentar tu negocio', paragraphs: ['Una página clara y atractiva donde las personas pueden conocer lo que ofreces y ponerse en contacto contigo.', 'La preparamos para que Google y las herramientas de IA puedan entenderla mejor, complementado tu presencia digital junto con Instagram, Google Maps y otras plataformas donde tu negocio o emprendimiento tenga presencia.'] },
         { number: '02', icon: '▤', title: 'Webs con panel de administración', paragraphs: ['Sitios fáciles de actualizar, con un espacio privado para gestionar contenido, servicios o reservas.'] },
         { number: '03', icon: '⌘', title: 'Software a medida', paragraphs: ['Herramientas diseñadas alrededor de tus procesos para reducir tareas repetitivas y ordenar el trabajo.'] },
         { number: '04', icon: '↗', title: 'Consultoría IT', paragraphs: ['Orientación práctica para elegir tecnología, resolver problemas y tomar decisiones con confianza.'] },
