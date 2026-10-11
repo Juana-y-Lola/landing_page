@@ -5,8 +5,8 @@ name: Sebastian Castañeda dev
 description: Mi web personal y blog, donde reúno mi experiencia, proyectos y artículos.
 detailLink: /proyectos/web-personal-y-blog/
 projectLink: https://sebastiancastaneda.dev/
-previewImage: /images/portfolio/personal-site.svg
-imageAlt: Vista ilustrada de la web personal oscura de Sebastian Castañeda, con perfil lateral y secciones de contenido.
+previewImage: /images/portfolio/personal-site.webp
+imageAlt: Captura real de la portada de sebastiancastaneda.dev, con perfil lateral y sección Acerca de.
 category: Web personal + blog
 kind: real
 order: 0
