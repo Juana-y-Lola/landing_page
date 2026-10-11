@@ -28,7 +28,7 @@ translationKey: my-project
 name: Nombre del proyecto
 description: Una descripción breve para la tarjeta y los buscadores.
 detailLink: /proyectos/my-project/
-previewImage: /images/portfolio/my-project.svg
+previewImage: /images/portfolio/my-project.webp
 imageAlt: Descripción de la imagen de vista previa.
 category: Landing page
 kind: concept
@@ -47,8 +47,8 @@ Write the project details in the Markdown body. Add the preview image under `pub
 
 The thank-you pages are excluded from the sitemap and contain `noindex` metadata. Public pages have canonical and reciprocal language URLs. `robots.txt` permits search and AI answer crawlers while opting out of the separate GPTBot, ClaudeBot, and Applebot-Extended training controls. Google-Extended is allowed because it also supports Gemini answer grounding.
 
-Changing `public/og-image.svg` requires regenerating `public/og-image.png`. With dependencies installed, run:
+The source for `public/og-image.png` is archived at `../utils/media/landing_page/og-image.svg`. To regenerate the published PNG with dependencies installed, run:
 
 ```sh
-node --input-type=module -e 'import sharp from "sharp"; await sharp("public/og-image.svg").png().toFile("public/og-image.png")'
+node --input-type=module -e 'import { createRequire } from "node:module"; const sharp = createRequire(import.meta.resolve("astro"))("sharp"); await sharp("../utils/media/landing_page/og-image.svg").png().toFile("public/og-image.png")'
 ```

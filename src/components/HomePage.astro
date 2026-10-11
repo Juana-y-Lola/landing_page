@@ -94,7 +94,6 @@ const contactEmail = 'hola@juanaylola.com';
             <article class="project-card">
               <a class="project-image-link" href={project.data.detailLink} aria-label={`${project.data.kind === 'concept' ? t.work.view : t.work.viewReal}: ${project.data.name}`}>
                 <img src={project.data.previewImage} width="1200" height="800" alt={project.data.imageAlt} loading="lazy" />
-                <span class="project-arrow" aria-hidden="true">↗</span>
               </a>
               <div class="project-meta"><span>{project.data.category}</span><span>{project.data.kind === 'concept' ? t.work.concept : t.work.real}</span></div>
               <h3><a href={project.data.detailLink}>{project.data.name}</a></h3>

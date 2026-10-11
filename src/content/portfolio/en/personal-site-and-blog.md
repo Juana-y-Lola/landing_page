@@ -5,8 +5,8 @@ name: Sebastian Castañeda dev
 description: My personal website and blog, bringing together my experience, projects, and writing.
 detailLink: /en/projects/personal-site-and-blog/
 projectLink: https://sebastiancastaneda.dev/
-previewImage: /images/portfolio/personal-site.svg
-imageAlt: Illustrated preview of Sebastian Castañeda's dark personal website with a profile sidebar and content sections.
+previewImage: /images/portfolio/personal-site.webp
+imageAlt: Real screenshot of sebastiancastaneda.dev showing the profile sidebar and About section.
 category: Personal website + blog
 kind: real
 order: 0
