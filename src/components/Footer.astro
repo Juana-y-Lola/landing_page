@@ -4,6 +4,14 @@ import { copy, paths, type Locale } from '../lib/copy';
 interface Props { locale: Locale }
 const { locale } = Astro.props;
 const t = copy[locale];
+const base = paths[locale].home;
+const links = [
+  { href: `${base}#inicio`, label: t.nav.home },
+  { href: `${base}#servicios`, label: t.nav.services },
+  { href: `${base}#proyectos`, label: t.nav.work },
+  { href: `${base}#historia`, label: t.nav.story },
+  { href: `${base}#contacto`, label: t.nav.contact },
+];
 ---
 
 <footer class="site-footer">
@@ -12,9 +20,19 @@ const t = copy[locale];
       <a class="footer-brand" href={paths[locale].home}>Juana <span>&</span> Lola Digital</a>
       <p>{t.footer.line}</p>
     </div>
-    <div class="footer-side">
-      <a href={`${paths[locale].home}#contacto`}>{t.nav.contact} ↗</a>
-      <small>© {new Date().getFullYear()} Juana & Lola Digital. {t.footer.rights}</small>
+    <nav class="footer-nav" aria-label={t.footer.navigationLabel}>
+      <h2 class="footer-heading">{t.footer.navigation}</h2>
+      <ul>
+        {links.map((link) => <li><a href={link.href}>{link.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="footer-contact">
+      <h2 class="footer-heading">{t.nav.contact}</h2>
+      <a class="footer-email" href="mailto:hola@juanaylola.com">hola@juanaylola.com</a>
+      <a class="footer-cta" href={`${base}#contacto`}>{t.footer.getInTouch} <span aria-hidden="true">↗</span></a>
     </div>
+  </div>
+  <div class="shell footer-bottom">
+    <small>© {new Date().getFullYear()} Juana & Lola Digital. {t.footer.rights}</small>
   </div>
 </footer>
