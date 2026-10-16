@@ -18,32 +18,16 @@ const contactEmail = 'hola@juanaylola.com';
     <section class="hero section-pad" id="inicio">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.hero.eyebrow}</p>
-          <h1>{t.hero.before} <em>{t.hero.highlight}</em></h1>
+          <div class="hero-heading">
+            <p class="eyebrow"><span class="eyebrow-dot"></span>{t.hero.eyebrow}</p>
+            <p class="hero-location">{t.hero.location}</p>
+            <h1><span>{t.hero.before}</span> <em>{t.hero.highlight}</em></h1>
+          </div>
           <p class="hero-lead">{t.hero.body}</p>
           <div class="hero-actions">
             <a class="button button-dark" href="#contacto">{t.hero.primary}<span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#servicios">{t.hero.secondary}<span aria-hidden="true">↘</span></a>
           </div>
-          <p class="hero-note"><span aria-hidden="true">✦</span>{t.hero.note}</p>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="hero-orbit orbit-one"></div>
-          <div class="hero-orbit orbit-two"></div>
-          <div class="hero-card">
-            <div class="browser-bar"><span></span><span></span><span></span><div>juanaylola.com</div></div>
-            <div class="mockup-surface">
-              <div class="mockup-top"><span>J<span class="mockup-amp">&</span>L</span><span class="mockup-lines"><i></i><i></i><i></i></span></div>
-              <div class="mockup-content">
-                <p>{t.hero.mockupLabel}</p>
-                <strong>{t.hero.mockupTitle}</strong>
-                <span class="mockup-button">{t.hero.mockupAction} ↗</span>
-              </div>
-              <div class="mockup-art"><span class="art-sun"></span><span class="art-hill art-hill-one"></span><span class="art-hill art-hill-two"></span></div>
-            </div>
-          </div>
-          <div class="floating-stamp"><span>✳</span><small>Digital<br />with care</small></div>
-          <div class="hero-spark hero-spark-one">✳</div><div class="hero-spark hero-spark-two">✦</div>
         </div>
       </div>
     </section>
