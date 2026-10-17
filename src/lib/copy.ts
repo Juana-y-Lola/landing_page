@@ -1,8 +1,8 @@
 export type Locale = 'es' | 'en';
 
 export const paths = {
-  es: { home: '/', thanks: '/gracias/' },
-  en: { home: '/en/', thanks: '/en/thank-you/' },
+  es: { home: '/', thanks: '/gracias/', privacy: '/privacidad/' },
+  en: { home: '/en/', thanks: '/en/thank-you/', privacy: '/en/privacy/' },
 } as const;
 
 export const copy = {
@@ -79,10 +79,23 @@ export const copy = {
       sending: 'Enviando…',
       error: 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme por correo.',
       note: 'Tus datos se usarán únicamente para responder a tu consulta.',
+      privacyLink: 'Más información sobre privacidad',
     },
     detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', overview: 'La idea', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
     thanks: { title: '¡Mensaje enviado!', description: 'Gracias por escribirme. He recibido tu mensaje y te responderé lo antes posible.', back: 'Volver al inicio' },
-    footer: { line: 'Ideas digitales para negocios reales.', navigation: 'Navegación', navigationLabel: 'Navegación del pie de página', getInTouch: 'Escríbenos', rights: 'Todos los derechos reservados.' },
+    privacy: {
+      title: 'Privacidad y titularidad',
+      description: 'Quién está detrás de Juana & Lola Digital y cómo se utilizan los datos de tus consultas.',
+      updated: 'Última actualización:',
+      back: 'Volver al inicio',
+      owner: { title: 'Titular y contacto', text: 'Juana & Lola Digital es un proyecto independiente de Carlos Sebastian Castañeda. Para consultas sobre los servicios o el tratamiento de tus datos, puedes escribir a' },
+      data: { title: 'Datos y finalidad', text: 'El formulario de contacto recoge tu nombre, correo electrónico, servicio de interés, mensaje e idioma. Estos datos se utilizan para responder a tu consulta y gestionar las comunicaciones relacionadas.' },
+      providers: { title: 'Proveedores', text: 'El sitio utiliza Netlify para el alojamiento y el sistema de formularios. Netlify interviene en el tratamiento de los datos necesarios para prestar estos servicios.', link: 'Acuerdo de tratamiento de datos de Netlify' },
+      retention: { title: 'Conservación', text: 'Los datos se conservan durante el tiempo necesario para atender tu consulta y gestionar las comunicaciones relacionadas, así como para cumplir las obligaciones legales que resulten aplicables.' },
+      rights: { title: 'Tus derechos', text: 'Puedes solicitar acceso, rectificación, actualización o eliminación de tus datos escribiendo a', information: 'Para conocer más sobre tus derechos, consulta la información de la Agencia de Acceso a la Información Pública de Argentina (AAIP).', link: 'Información sobre tus derechos en la AAIP' },
+      cookies: { title: 'Cookies', text: 'Este sitio no incorpora herramientas de analítica ni publicidad y no utiliza cookies propias de seguimiento.' },
+    },
+    footer: { line: 'Ideas digitales para negocios reales.', navigation: 'Navegación', navigationLabel: 'Navegación del pie de página', getInTouch: 'Escríbenos', privacy: 'Privacidad y cookies' },
   },
   en: {
     title: 'Juana & Lola Digital - Websites, custom software, and IT help for local businesses',
@@ -157,9 +170,22 @@ export const copy = {
       sending: 'Sending…',
       error: 'Your message could not be sent. Please try again or email me directly.',
       note: 'Your details will only be used to reply to your enquiry.',
+      privacyLink: 'More information about privacy',
     },
     detail: { back: 'Back to projects', concept: 'Concept project', overview: 'The idea', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
     thanks: { title: 'Message sent!', description: 'Thank you for getting in touch. I have received your message and will reply as soon as I can.', back: 'Back to home' },
-    footer: { line: 'Digital ideas for real businesses.', navigation: 'Navigation', navigationLabel: 'Footer navigation', getInTouch: 'Get in touch', rights: 'All rights reserved.' },
+    privacy: {
+      title: 'Privacy and site ownership',
+      description: 'Who is behind Juana & Lola Digital and how the information in your enquiries is used.',
+      updated: 'Last updated:',
+      back: 'Back to home',
+      owner: { title: 'Site owner and contact', text: 'Juana & Lola Digital is an independent project by Carlos Sebastian Castañeda. For enquiries about the services or how your personal data is handled, you can email' },
+      data: { title: 'Data and purpose', text: 'The contact form collects your name, email address, service of interest, message, and language. These details are used to reply to your enquiry and manage related communications.' },
+      providers: { title: 'Service providers', text: 'The site uses Netlify for hosting and form handling. Netlify processes the data needed to provide these services.', link: 'Netlify Data Processing Agreement' },
+      retention: { title: 'Data retention', text: 'Your data is kept for as long as needed to respond to your enquiry and manage related communications, and to meet any applicable legal obligations.' },
+      rights: { title: 'Your rights', text: 'You can request access to, correction, updating, or deletion of your personal data by emailing', information: 'To learn more about your rights, see the information from Argentina’s Agency for Access to Public Information (AAIP).', link: 'Information about your rights from the AAIP' },
+      cookies: { title: 'Cookies', text: 'This site does not include analytics or advertising tools and does not use its own tracking cookies.' },
+    },
+    footer: { line: 'Digital ideas for real businesses.', navigation: 'Navigation', navigationLabel: 'Footer navigation', getInTouch: 'Get in touch', privacy: 'Privacy and cookies' },
   },
 } as const;
