@@ -33,6 +33,8 @@ const links = [
     </div>
   </div>
   <div class="shell footer-bottom">
-    <small>© {new Date().getFullYear()} Juana & Lola Digital. {t.footer.rights}</small>
+    <small>© {new Date().getFullYear()} Juana & Lola Digital</small>
+    <span aria-hidden="true">·</span>
+    <a class="footer-privacy" href={paths[locale].privacy}>{t.footer.privacy}</a>
   </div>
 </footer>

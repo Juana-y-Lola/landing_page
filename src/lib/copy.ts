@@ -1,8 +1,8 @@
 export type Locale = 'es' | 'en';
 
 export const paths = {
-  es: { home: '/', thanks: '/gracias/' },
-  en: { home: '/en/', thanks: '/en/thank-you/' },
+  es: { home: '/', thanks: '/gracias/', privacy: '/privacidad/' },
+  en: { home: '/en/', thanks: '/en/thank-you/', privacy: '/en/privacy/' },
 } as const;
 
 export const copy = {
@@ -13,7 +13,7 @@ export const copy = {
     switchLabel: 'Read in English',
     hero: {
       eyebrow: 'Diseño web · Software · Consultoría IT',
-      location: 'España ·\u00a0Argentina',
+      location: 'Argentina ·\u00a0España',
       before: 'Ideas digitales para',
       highlight: 'negocios reales',
       body: 'Una web que cuenta bien lo que haces. Herramientas que te ahorran tiempo. Acompañamiento tecnológico explicado sin rodeos.',
@@ -23,12 +23,12 @@ export const copy = {
     services: {
       eyebrow: 'Lo que puedo crear',
       title: 'Tecnología que trabaja para ti.',
-      intro: 'Desde una primera página hasta una herramienta hecha a medida: cada solución parte de lo que tu negocio necesita de verdad.',
+      intro: 'Una web, más visibilidad o una herramienta a medida: cada solución parte de lo que tu negocio necesita de verdad.',
       items: [
-        { number: '01', icon: '✳', title: 'Una página web para presentar tu negocio', paragraphs: ['Una página clara y atractiva donde las personas pueden conocer lo que ofreces y ponerse en contacto contigo.', 'La preparamos para que Google y las herramientas de IA puedan entenderla mejor, complementado tu presencia digital junto con Instagram, Google Maps y otras plataformas donde tu negocio o emprendimiento tenga presencia.'] },
-        { number: '02', icon: '▤', title: 'Webs con panel de administración', paragraphs: ['Sitios fáciles de actualizar, con un espacio privado para gestionar contenido, servicios o reservas.'] },
-        { number: '03', icon: '⌘', title: 'Software a medida', paragraphs: ['Herramientas diseñadas alrededor de tus procesos para reducir tareas repetitivas y ordenar el trabajo.'] },
-        { number: '04', icon: '↗', title: 'Consultoría IT', paragraphs: ['Orientación práctica para elegir tecnología, resolver problemas y tomar decisiones con confianza.'] },
+        { number: '01', icon: '✳', title: 'Páginas web para tu negocio', paragraphs: ['Una web clara y atractiva donde las personas puedan conocer lo que ofreces y ponerse en contacto contigo.', 'Según lo que necesites, puede ser un sitio estático, ideal cuando el contenido cambia poco, o una web con panel de administración para que puedas actualizar textos, imágenes y servicios por tu cuenta.'] },
+        { number: '02', icon: '▤', title: 'SEO y posicionamiento', paragraphs: ['Que te encuentren también forma parte de tener una buena web. El SEO, u optimización para buscadores, ayuda a que Google entienda mejor tu sitio y las personas puedan encontrar lo que ofreces.', 'Para webs nuevas o existentes, revisamos el contenido y la estructura para facilitar su comprensión por buscadores y herramientas de IA, complementando tu presencia en Instagram, Google Maps y otras plataformas.'] },
+        { number: '03', icon: '⌘', title: 'Software a medida', paragraphs: ['Herramientas pensadas para reducir tareas repetitivas, organizar la información y simplificar el trabajo de cada día.', 'Cuando las necesidades de tu negocio son específicas, podemos evaluar una solución a medida y elegir las tecnologías adecuadas para tus procesos, tus objetivos y tu presupuesto.'] },
+        { number: '04', icon: '↗', title: 'Consultoría IT', paragraphs: ['Orientación práctica para tomar decisiones sobre la tecnología de tu negocio, con explicaciones claras y recomendaciones que puedas llevar a la práctica.', 'Revisamos cómo trabajas, qué herramientas utilizas y dónde puedes ahorrar tiempo o simplificar tareas. Te ayudo a comparar opciones, priorizar mejoras y definir próximos pasos según tus necesidades y presupuesto.'] },
       ],
     },
     process: {
@@ -72,17 +72,29 @@ export const copy = {
       emailPlaceholder: 'hola@tumarca.com',
       service: '¿En qué puedo ayudarte?',
       servicePlaceholder: 'Selecciona una opción',
-      serviceOptions: ['Consultoría gratuita', 'Página web', 'Software a medida', 'Consultoría IT', 'Aún no lo sé'],
+      serviceOptions: ['Consultoría gratuita', 'Página web', 'SEO y posicionamiento', 'Software a medida', 'Consultoría IT', 'Aún no lo sé'],
       message: 'Tu mensaje',
       messagePlaceholder: 'Háblame un poco de tu negocio y de tu idea...',
       submit: 'Enviar mensaje',
       sending: 'Enviando…',
       error: 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme por correo.',
       note: 'Tus datos se usarán únicamente para responder a tu consulta.',
+      privacyLink: 'Más información sobre privacidad',
     },
     detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', overview: 'La idea', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
     thanks: { title: '¡Mensaje enviado!', description: 'Gracias por escribirme. He recibido tu mensaje y te responderé lo antes posible.', back: 'Volver al inicio' },
-    footer: { line: 'Ideas digitales para negocios reales.', navigation: 'Navegación', navigationLabel: 'Navegación del pie de página', getInTouch: 'Escríbenos', rights: 'Todos los derechos reservados.' },
+    privacy: {
+      title: 'Privacidad y titularidad',
+      description: 'Quién está detrás de Juana & Lola Digital y cómo se utilizan los datos de tus consultas.',
+      updated: 'Última actualización:',
+      owner: { title: 'Titular y contacto', text: 'Juana & Lola Digital es un proyecto independiente de Carlos Sebastian Castañeda. Para consultas sobre los servicios o el tratamiento de tus datos, puedes escribir a' },
+      data: { title: 'Datos y finalidad', text: 'El formulario de contacto recoge tu nombre, correo electrónico, servicio de interés, mensaje e idioma. Estos datos se utilizan para responder a tu consulta y gestionar las comunicaciones relacionadas.' },
+      providers: { title: 'Proveedores', text: 'El sitio utiliza Netlify para el alojamiento y el sistema de formularios. Netlify interviene en el tratamiento de los datos necesarios para prestar estos servicios.', link: 'Acuerdo de tratamiento de datos de Netlify' },
+      retention: { title: 'Conservación', text: 'Los datos se conservan durante el tiempo necesario para atender tu consulta y gestionar las comunicaciones relacionadas, así como para cumplir las obligaciones legales que resulten aplicables.' },
+      rights: { title: 'Tus derechos', text: 'Puedes solicitar acceso, rectificación, actualización o eliminación de tus datos escribiendo a', information: 'Para conocer más sobre tus derechos, consulta la información de la Agencia de Acceso a la Información Pública de Argentina (AAIP).', link: 'Información sobre tus derechos en la AAIP' },
+      cookies: { title: 'Cookies', text: 'Este sitio no incorpora herramientas de analítica ni publicidad y no utiliza cookies propias de seguimiento.' },
+    },
+    footer: { line: 'Ideas digitales para negocios reales.', navigation: 'Navegación', navigationLabel: 'Navegación del pie de página', getInTouch: 'Escríbenos', privacy: 'Privacidad y cookies' },
   },
   en: {
     title: 'Juana & Lola Digital - Websites, custom software, and IT help for local businesses',
@@ -91,7 +103,7 @@ export const copy = {
     switchLabel: 'Leer en español',
     hero: {
       eyebrow: 'Web design · Software · IT consulting',
-      location: 'Spain ·\u00a0Argentina',
+      location: 'Argentina ·\u00a0Spain',
       before: 'Digital ideas for',
       highlight: 'real businesses.',
       body: 'A website that tells your story well. Tools that save you time. Technology guidance without the jargon.',
@@ -101,12 +113,12 @@ export const copy = {
     services: {
       eyebrow: 'What I can create',
       title: 'Technology that works for you.',
-      intro: 'From your first web page to a custom tool, every solution starts with what your business actually needs.',
+      intro: 'A website, greater visibility, or a custom tool: every solution starts with what your business actually needs.',
       items: [
-        { number: '01', icon: '✳', title: 'A website to introduce your business', paragraphs: ['A clear, inviting page where people can learn what you offer and get in touch with you.', 'We prepare it so Google and AI tools can understand it better, complementing your digital presence across Instagram, Google Maps, and any other platforms where your business or venture is active.'] },
-        { number: '02', icon: '▤', title: 'Websites with admin dashboards', paragraphs: ['Sites you can update yourself, with a private space to manage content, services, or bookings.'] },
-        { number: '03', icon: '⌘', title: 'Custom software', paragraphs: ['Tools shaped around your processes to reduce repetitive work and keep things organized.'] },
-        { number: '04', icon: '↗', title: 'IT consulting', paragraphs: ['Practical guidance to choose technology, solve problems, and make decisions with confidence.'] },
+        { number: '01', icon: '✳', title: 'Websites for your business', paragraphs: ['A clear, inviting website where people can learn what you offer and get in touch with you.', 'Depending on your needs, it can be a static site, ideal when content rarely changes, or a website with an admin dashboard so you can update text, images, and services yourself.'] },
+        { number: '02', icon: '▤', title: 'SEO and search visibility', paragraphs: ['Being found is part of having a good website. SEO, or search engine optimization, helps Google understand your site better so people can find what you offer.', 'For new or existing websites, we review the content and structure to help search engines and AI tools understand them, complementing your presence on Instagram, Google Maps, and other platforms.'] },
+        { number: '03', icon: '⌘', title: 'Custom software', paragraphs: ['Tools designed to reduce repetitive tasks, organize information, and simplify everyday work.', 'When your business has specific needs, we can explore a custom solution and choose the right technologies for your processes, goals, and budget.'] },
+        { number: '04', icon: '↗', title: 'IT consulting', paragraphs: ['Practical guidance for making technology decisions for your business, with clear explanations and recommendations you can put into practice.', 'We review how you work, which tools you use, and where you could save time or simplify tasks. I help you compare options, prioritize improvements, and define next steps based on your needs and budget.'] },
       ],
     },
     process: {
@@ -150,16 +162,28 @@ export const copy = {
       emailPlaceholder: 'hola@tumarca.com',
       service: 'How can I help?',
       servicePlaceholder: 'Choose an option',
-      serviceOptions: ['Free consultation', 'Website', 'Custom software', 'IT consulting', 'I’m not sure yet'],
+      serviceOptions: ['Free consultation', 'Website', 'SEO and search visibility', 'Custom software', 'IT consulting', 'I’m not sure yet'],
       message: 'Your message',
       messagePlaceholder: 'Tell me a little about your business and your idea...',
       submit: 'Send message',
       sending: 'Sending…',
       error: 'Your message could not be sent. Please try again or email me directly.',
       note: 'Your details will only be used to reply to your enquiry.',
+      privacyLink: 'More information about privacy',
     },
     detail: { back: 'Back to projects', concept: 'Concept project', overview: 'The idea', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
     thanks: { title: 'Message sent!', description: 'Thank you for getting in touch. I have received your message and will reply as soon as I can.', back: 'Back to home' },
-    footer: { line: 'Digital ideas for real businesses.', navigation: 'Navigation', navigationLabel: 'Footer navigation', getInTouch: 'Get in touch', rights: 'All rights reserved.' },
+    privacy: {
+      title: 'Privacy and site ownership',
+      description: 'Who is behind Juana & Lola Digital and how the information in your enquiries is used.',
+      updated: 'Last updated:',
+      owner: { title: 'Site owner and contact', text: 'Juana & Lola Digital is an independent project by Carlos Sebastian Castañeda. For enquiries about the services or how your personal data is handled, you can email' },
+      data: { title: 'Data and purpose', text: 'The contact form collects your name, email address, service of interest, message, and language. These details are used to reply to your enquiry and manage related communications.' },
+      providers: { title: 'Service providers', text: 'The site uses Netlify for hosting and form handling. Netlify processes the data needed to provide these services.', link: 'Netlify Data Processing Agreement' },
+      retention: { title: 'Data retention', text: 'Your data is kept for as long as needed to respond to your enquiry and manage related communications, and to meet any applicable legal obligations.' },
+      rights: { title: 'Your rights', text: 'You can request access to, correction, updating, or deletion of your personal data by emailing', information: 'To learn more about your rights, see the information from Argentina’s Agency for Access to Public Information (AAIP).', link: 'Information about your rights from the AAIP' },
+      cookies: { title: 'Cookies', text: 'This site does not include analytics or advertising tools and does not use its own tracking cookies.' },
+    },
+    footer: { line: 'Digital ideas for real businesses.', navigation: 'Navigation', navigationLabel: 'Footer navigation', getInTouch: 'Get in touch', privacy: 'Privacy and cookies' },
   },
 } as const;

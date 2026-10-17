@@ -173,6 +173,8 @@ section[id] { scroll-margin-top: 78px; }
 .contact-form input::placeholder, .contact-form textarea::placeholder { color: #87938c; }
 .form-bottom { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 .form-bottom p { max-width: 260px; color: #66776b; font-size: 11px; line-height: 1.5; }
+.form-privacy-link { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.form-privacy-link:hover { color: #a44e3f; }
 .form-bottom .button { flex: none; border-radius: 8px; }
 .form-error { color: #a43f30; font-size: 13px; line-height: 1.5; }
 
@@ -190,8 +192,22 @@ section[id] { scroll-margin-top: 78px; }
 .footer-contact .footer-cta { gap: 8px; color: #f2ae94; font-weight: 800; }
 .site-footer a:hover { color: #f2ae94; text-decoration: underline; text-underline-offset: 4px; }
 .site-footer a:focus-visible { outline-color: #f2ae94; border-radius: 2px; }
-.footer-bottom { padding-block: 22px; border-top: 1px solid #405057; }
-.footer-bottom small { display: block; color: #a6b4b2; font-size: 12px; }
+.footer-bottom { display: flex; align-items: center; justify-content: flex-end; gap: 6px; padding-block: 16px; border-top: 1px solid #405057; color: #a6b4b2; font-size: 12px; }
+.footer-bottom small { display: block; font: inherit; white-space: nowrap; }
+.footer-privacy { display: inline-flex; align-items: center; min-height: 44px; font: inherit; text-align: right; white-space: nowrap; }
+
+.privacy-page { padding-block: clamp(55px, 7vw, 90px) clamp(75px, 8vw, 110px); background: var(--paper); }
+.privacy-content { max-width: 780px; }
+.privacy-heading { padding-bottom: 32px; border-bottom: 1px solid var(--line); }
+.privacy-heading h1 { font-family: var(--font-display); font-size: clamp(38px, 5vw, 64px); font-weight: 800; line-height: 1.1; letter-spacing: -.065em; }
+.privacy-intro { margin-top: 22px; color: var(--ink-soft); font-size: 17px; line-height: 1.8; }
+.privacy-updated { margin-top: 18px; color: var(--ink-soft); font-size: 13px; line-height: 1.6; }
+.privacy-section { margin-top: 36px; }
+.privacy-section h2 { margin-bottom: 12px; color: var(--ink); font-family: var(--font-display); font-size: clamp(24px, 3vw, 28px); line-height: 1.25; letter-spacing: -.045em; }
+.privacy-section p { color: var(--ink-soft); font-size: 16px; line-height: 1.85; }
+.privacy-section p + p { margin-top: 14px; }
+.privacy-section a { color: #a44e3f; text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
+.privacy-section a:hover { color: var(--ink); }
 
 .project-hero { padding-top: 65px; padding-bottom: 85px; background: #f2eae1; }
 .back-link { display: inline-flex; gap: 10px; align-items: center; color: #a35645; font-size: 12px; font-weight: 800; }

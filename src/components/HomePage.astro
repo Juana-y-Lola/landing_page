@@ -145,11 +145,11 @@ const contactEmail = 'hola@juanaylola.com';
           <label><span class="field-label">{t.contact.service}</span>
             <select name="service" required>
               <option value="" disabled selected>{t.contact.servicePlaceholder}</option>
-              {t.contact.serviceOptions.map((option, index) => <option value={['free-consultation', 'website', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
+              {t.contact.serviceOptions.map((option, index) => <option value={['free-consultation', 'website', 'seo', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
             </select>
           </label>
           <label><span class="field-label">{t.contact.message}</span><textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} required></textarea></label>
-          <div class="form-bottom"><p>{t.contact.note}</p><button class="button button-dark" type="submit"><span class="submit-label">{t.contact.submit}</span><span aria-hidden="true">↗</span></button></div>
+          <div class="form-bottom"><p>{t.contact.note} <a class="form-privacy-link" href={paths[locale].privacy}>{t.contact.privacyLink}</a>.</p><button class="button button-dark" type="submit"><span class="submit-label">{t.contact.submit}</span><span aria-hidden="true">↗</span></button></div>
           <p class="form-error" role="alert" hidden>{t.contact.error}</p>
         </form>
       </div>

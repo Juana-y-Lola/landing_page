@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { copy, paths, type Locale } from '../lib/copy';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = copy[locale].privacy;
+const contactEmail = 'hola@juanaylola.com';
+const updatedAt = '2026-10-17';
+const formattedDate = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date(`${updatedAt}T00:00:00Z`));
+---
+
+<BaseLayout
+  locale={locale}
+  title={`${t.title} | Juana & Lola Digital`}
+  description={t.description}
+  canonicalPath={paths[locale].privacy}
+  alternatePaths={{ es: paths.es.privacy, en: paths.en.privacy }}
+>
+  <main id="main-content" class="privacy-page">
+    <article class="shell privacy-content">
+      <header class="privacy-heading">
+        <h1>{t.title}</h1>
+        <p class="privacy-intro">{t.description}</p>
+        <p class="privacy-updated">{t.updated} <time datetime={updatedAt}>{formattedDate}</time></p>
+      </header>
+
+      <section class="privacy-section" aria-labelledby="privacy-owner">
+        <h2 id="privacy-owner">{t.owner.title}</h2>
+        <p>{t.owner.text} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+      </section>
+      <section class="privacy-section" aria-labelledby="privacy-data">
+        <h2 id="privacy-data">{t.data.title}</h2>
+        <p>{t.data.text}</p>
+      </section>
+      <section class="privacy-section" aria-labelledby="privacy-providers">
+        <h2 id="privacy-providers">{t.providers.title}</h2>
+        <p>{t.providers.text}</p>
+        <p><a href="https://www.netlify.com/pdf/netlify-dpa.pdf">{t.providers.link}</a></p>
+      </section>
+      <section class="privacy-section" aria-labelledby="privacy-retention">
+        <h2 id="privacy-retention">{t.retention.title}</h2>
+        <p>{t.retention.text}</p>
+      </section>
+      <section class="privacy-section" aria-labelledby="privacy-rights">
+        <h2 id="privacy-rights">{t.rights.title}</h2>
+        <p>{t.rights.text} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+        <p>{t.rights.information}</p>
+        <p><a href="https://www.argentina.gob.ar/aaip/datospersonales/derechos">{t.rights.link}</a></p>
+      </section>
+      <section class="privacy-section" aria-labelledby="privacy-cookies">
+        <h2 id="privacy-cookies">{t.cookies.title}</h2>
+        <p>{t.cookies.text}</p>
+      </section>
+    </article>
+  </main>
+</BaseLayout>
