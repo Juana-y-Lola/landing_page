@@ -145,7 +145,7 @@ const contactEmail = 'hola@juanaylola.com';
           <label><span class="field-label">{t.contact.service}</span>
             <select name="service" required>
               <option value="" disabled selected>{t.contact.servicePlaceholder}</option>
-              {t.contact.serviceOptions.map((option, index) => <option value={['free-consultation', 'website', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
+              {t.contact.serviceOptions.map((option, index) => <option value={['free-consultation', 'website', 'seo', 'custom-software', 'it-consulting', 'unsure'][index]}>{option}</option>)}
             </select>
           </label>
           <label><span class="field-label">{t.contact.message}</span><textarea name="message" rows="5" placeholder={t.contact.messagePlaceholder} required></textarea></label>

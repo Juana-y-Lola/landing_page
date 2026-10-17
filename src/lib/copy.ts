@@ -13,7 +13,7 @@ export const copy = {
     switchLabel: 'Read in English',
     hero: {
       eyebrow: 'Diseño web · Software · Consultoría IT',
-      location: 'España ·\u00a0Argentina',
+      location: 'Argentina ·\u00a0España',
       before: 'Ideas digitales para',
       highlight: 'negocios reales',
       body: 'Una web que cuenta bien lo que haces. Herramientas que te ahorran tiempo. Acompañamiento tecnológico explicado sin rodeos.',
@@ -23,12 +23,12 @@ export const copy = {
     services: {
       eyebrow: 'Lo que puedo crear',
       title: 'Tecnología que trabaja para ti.',
-      intro: 'Desde una primera página hasta una herramienta hecha a medida: cada solución parte de lo que tu negocio necesita de verdad.',
+      intro: 'Una web, más visibilidad o una herramienta a medida: cada solución parte de lo que tu negocio necesita de verdad.',
       items: [
-        { number: '01', icon: '✳', title: 'Una página web para presentar tu negocio', paragraphs: ['Una página clara y atractiva donde las personas pueden conocer lo que ofreces y ponerse en contacto contigo.', 'La preparamos para que Google y las herramientas de IA puedan entenderla mejor, complementado tu presencia digital junto con Instagram, Google Maps y otras plataformas donde tu negocio o emprendimiento tenga presencia.'] },
-        { number: '02', icon: '▤', title: 'Webs con panel de administración', paragraphs: ['Sitios fáciles de actualizar, con un espacio privado para gestionar contenido, servicios o reservas.'] },
-        { number: '03', icon: '⌘', title: 'Software a medida', paragraphs: ['Herramientas diseñadas alrededor de tus procesos para reducir tareas repetitivas y ordenar el trabajo.'] },
-        { number: '04', icon: '↗', title: 'Consultoría IT', paragraphs: ['Orientación práctica para elegir tecnología, resolver problemas y tomar decisiones con confianza.'] },
+        { number: '01', icon: '✳', title: 'Páginas web para tu negocio', paragraphs: ['Una web clara y atractiva donde las personas puedan conocer lo que ofreces y ponerse en contacto contigo.', 'Según lo que necesites, puede ser un sitio estático, ideal cuando el contenido cambia poco, o una web con panel de administración para que puedas actualizar textos, imágenes y servicios por tu cuenta.'] },
+        { number: '02', icon: '▤', title: 'SEO y posicionamiento', paragraphs: ['Que te encuentren también forma parte de tener una buena web. El SEO, u optimización para buscadores, ayuda a que Google entienda mejor tu sitio y las personas puedan encontrar lo que ofreces.', 'Para webs nuevas o existentes, revisamos el contenido y la estructura para facilitar su comprensión por buscadores y herramientas de IA, complementando tu presencia en Instagram, Google Maps y otras plataformas.'] },
+        { number: '03', icon: '⌘', title: 'Software a medida', paragraphs: ['Herramientas pensadas para reducir tareas repetitivas, organizar la información y simplificar el trabajo de cada día.', 'Cuando las necesidades de tu negocio son específicas, podemos evaluar una solución a medida y elegir las tecnologías adecuadas para tus procesos, tus objetivos y tu presupuesto.'] },
+        { number: '04', icon: '↗', title: 'Consultoría IT', paragraphs: ['Orientación práctica para tomar decisiones sobre la tecnología de tu negocio, con explicaciones claras y recomendaciones que puedas llevar a la práctica.', 'Revisamos cómo trabajas, qué herramientas utilizas y dónde puedes ahorrar tiempo o simplificar tareas. Te ayudo a comparar opciones, priorizar mejoras y definir próximos pasos según tus necesidades y presupuesto.'] },
       ],
     },
     process: {
@@ -72,7 +72,7 @@ export const copy = {
       emailPlaceholder: 'hola@tumarca.com',
       service: '¿En qué puedo ayudarte?',
       servicePlaceholder: 'Selecciona una opción',
-      serviceOptions: ['Consultoría gratuita', 'Página web', 'Software a medida', 'Consultoría IT', 'Aún no lo sé'],
+      serviceOptions: ['Consultoría gratuita', 'Página web', 'SEO y posicionamiento', 'Software a medida', 'Consultoría IT', 'Aún no lo sé'],
       message: 'Tu mensaje',
       messagePlaceholder: 'Háblame un poco de tu negocio y de tu idea...',
       submit: 'Enviar mensaje',
@@ -91,7 +91,7 @@ export const copy = {
     switchLabel: 'Leer en español',
     hero: {
       eyebrow: 'Web design · Software · IT consulting',
-      location: 'Spain ·\u00a0Argentina',
+      location: 'Argentina ·\u00a0Spain',
       before: 'Digital ideas for',
       highlight: 'real businesses.',
       body: 'A website that tells your story well. Tools that save you time. Technology guidance without the jargon.',
@@ -101,12 +101,12 @@ export const copy = {
     services: {
       eyebrow: 'What I can create',
       title: 'Technology that works for you.',
-      intro: 'From your first web page to a custom tool, every solution starts with what your business actually needs.',
+      intro: 'A website, greater visibility, or a custom tool: every solution starts with what your business actually needs.',
       items: [
-        { number: '01', icon: '✳', title: 'A website to introduce your business', paragraphs: ['A clear, inviting page where people can learn what you offer and get in touch with you.', 'We prepare it so Google and AI tools can understand it better, complementing your digital presence across Instagram, Google Maps, and any other platforms where your business or venture is active.'] },
-        { number: '02', icon: '▤', title: 'Websites with admin dashboards', paragraphs: ['Sites you can update yourself, with a private space to manage content, services, or bookings.'] },
-        { number: '03', icon: '⌘', title: 'Custom software', paragraphs: ['Tools shaped around your processes to reduce repetitive work and keep things organized.'] },
-        { number: '04', icon: '↗', title: 'IT consulting', paragraphs: ['Practical guidance to choose technology, solve problems, and make decisions with confidence.'] },
+        { number: '01', icon: '✳', title: 'Websites for your business', paragraphs: ['A clear, inviting website where people can learn what you offer and get in touch with you.', 'Depending on your needs, it can be a static site, ideal when content rarely changes, or a website with an admin dashboard so you can update text, images, and services yourself.'] },
+        { number: '02', icon: '▤', title: 'SEO and search visibility', paragraphs: ['Being found is part of having a good website. SEO, or search engine optimization, helps Google understand your site better so people can find what you offer.', 'For new or existing websites, we review the content and structure to help search engines and AI tools understand them, complementing your presence on Instagram, Google Maps, and other platforms.'] },
+        { number: '03', icon: '⌘', title: 'Custom software', paragraphs: ['Tools designed to reduce repetitive tasks, organize information, and simplify everyday work.', 'When your business has specific needs, we can explore a custom solution and choose the right technologies for your processes, goals, and budget.'] },
+        { number: '04', icon: '↗', title: 'IT consulting', paragraphs: ['Practical guidance for making technology decisions for your business, with clear explanations and recommendations you can put into practice.', 'We review how you work, which tools you use, and where you could save time or simplify tasks. I help you compare options, prioritize improvements, and define next steps based on your needs and budget.'] },
       ],
     },
     process: {
@@ -150,7 +150,7 @@ export const copy = {
       emailPlaceholder: 'hola@tumarca.com',
       service: 'How can I help?',
       servicePlaceholder: 'Choose an option',
-      serviceOptions: ['Free consultation', 'Website', 'Custom software', 'IT consulting', 'I’m not sure yet'],
+      serviceOptions: ['Free consultation', 'Website', 'SEO and search visibility', 'Custom software', 'IT consulting', 'I’m not sure yet'],
       message: 'Your message',
       messagePlaceholder: 'Tell me a little about your business and your idea...',
       submit: 'Send message',
