@@ -20,7 +20,6 @@ const formattedDate = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZ
   <main id="main-content" class="privacy-page">
     <article class="shell privacy-content">
       <header class="privacy-heading">
-        <a class="back-link" href={paths[locale].home}><span aria-hidden="true">←</span>{t.back}</a>
         <h1>{t.title}</h1>
         <p class="privacy-intro">{t.description}</p>
         <p class="privacy-updated">{t.updated} <time datetime={updatedAt}>{formattedDate}</time></p>
