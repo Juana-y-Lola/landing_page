@@ -9,7 +9,7 @@ previewImage: /images/portfolio/personal-site.webp
 imageAlt: Captura real de la portada de sebastiancastaneda.dev, con perfil lateral y sección Acerca de.
 category: Web personal + blog
 kind: real
-order: 0
+order: 1
 ---
 
 ## El proyecto
