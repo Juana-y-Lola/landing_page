@@ -9,7 +9,7 @@ previewImage: /images/portfolio/personal-site.webp
 imageAlt: Real screenshot of sebastiancastaneda.dev showing the profile sidebar and About section.
 category: Personal website + blog
 kind: real
-order: 0
+order: 1
 ---
 
 ## The project
