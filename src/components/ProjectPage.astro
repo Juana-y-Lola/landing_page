@@ -32,7 +32,7 @@ const { Content } = await render(entry);
         <a class="back-link" href={`${paths[locale].home}#proyectos`}><span aria-hidden="true">←</span> {t.detail.back}</a>
         <div class="project-hero-grid">
           <div class="project-intro">
-            <p class="eyebrow"><span class="eyebrow-dot"></span>{entry.data.kind === 'concept' ? t.detail.concept : t.work.real} · {entry.data.category}</p>
+            <p class="eyebrow section-label">{entry.data.kind === 'concept' ? t.detail.concept : t.work.real} · {entry.data.category}</p>
             <h1>{entry.data.name}</h1>
             <p class="project-subtitle">{entry.data.description}</p>
             {(entry.data.projectLink || entry.data.repositoryLink) && (
@@ -48,7 +48,7 @@ const { Content } = await render(entry);
     </section>
     <section class="project-body section-pad">
       <div class="shell project-body-grid">
-        <div class="project-aside"><p class="eyebrow"><span class="eyebrow-dot"></span>{t.detail.overview}</p><span aria-hidden="true">✳</span></div>
+        <div class="project-aside"><p class="eyebrow section-label">{t.detail.overview}</p></div>
         <article class="prose"><Content /></article>
       </div>
     </section>
