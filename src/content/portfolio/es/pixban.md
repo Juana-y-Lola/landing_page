@@ -7,7 +7,7 @@ detailLink: /proyectos/pixban/
 projectLink: https://pixban.app/
 repositoryLink: https://github.com/seba3c/pixban
 previewImage: /images/portfolio/pixban.webp
-imageAlt: Captura de pixban.app con matrículas y una persona pixeladas, una región rectangular seleccionada y el panel de ajustes.
+imageAlt: Captura de pixban.app con una ilustración de dos coches clásicos en una gasolinera del desierto y el panel de ajustes de pixelado.
 category: Editor de imágenes
 kind: real
 order: 0

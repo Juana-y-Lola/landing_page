@@ -5,6 +5,11 @@
 @import '@fontsource/manrope/400.css';
 @import '@fontsource/manrope/700.css';
 @import '@fontsource/manrope/800.css';
+@import '@fontsource/plus-jakarta-sans/latin-400.css';
+@import '@fontsource/plus-jakarta-sans/latin-500.css';
+@import '@fontsource/plus-jakarta-sans/latin-600.css';
+@import '@fontsource/plus-jakarta-sans/latin-700.css';
+@import '@fontsource/plus-jakarta-sans/latin-800.css';
 
 :root {
   color-scheme: light;
@@ -19,6 +24,11 @@
   --orange: #f0b06a;
   --font-body: 'DM Sans', 'Avenir Next', Arial, sans-serif;
   --font-display: 'Manrope', 'Avenir Next', Arial, sans-serif;
+}
+
+body.font-jakarta {
+  --font-body: 'Plus Jakarta Sans', 'Avenir Next', Arial, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Avenir Next', Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
