@@ -55,7 +55,7 @@ export const copy = {
     story: {
       eyebrow: 'Detrás del nombre',
       title: 'Un estudio con una historia muy personal.',
-      text1: 'Hola! Soy Sebastian Castañeda, Ingeniero de Software con mas de 15 años contruyendo soluciones digitales.',
+      text1: '¡Hola! Soy Sebastian Castañeda, Ingeniero de Software con más de 15 años construyendo soluciones digitales.',
       text2: 'Juana y Lola son las dos gatas que comparten mi vida y suelen acompañarme durante horas mientras trabajo en mis proyectos. Su curiosidad, su calma y su forma de hacer suyo cada rincón inspiraron el nombre de este proyecto.',
       text3: 'Simón también formó parte de esta pequeña familia. Aunque ya no está, sigue presente en su historia y en el cariño con el que nació Juana & Lola Digital.',
       photoSoon: 'Su foto llegará pronto',
