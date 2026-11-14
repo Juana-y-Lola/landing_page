@@ -84,7 +84,7 @@ const contactEmail = 'hola@juanaylola.com';
               <h3><a href={project.data.detailLink}>{project.data.name}</a></h3>
               <p>{project.data.description}</p>
               <div class="project-links">
-                <a class="text-link" href={project.data.detailLink}>{project.data.kind === 'concept' ? t.work.view : t.work.viewReal}<span aria-hidden="true">↗</span></a>
+                <a class="text-link project-primary-link" href={project.data.detailLink}>{project.data.kind === 'concept' ? t.work.view : t.work.viewReal}<span aria-hidden="true">↗</span></a>
                 {project.data.projectLink && <a class="text-link" href={project.data.projectLink} target="_blank" rel="noopener noreferrer">{t.work.visitSite}<span aria-hidden="true">↗</span></a>}
                 {project.data.repositoryLink && <a class="text-link" href={project.data.repositoryLink} target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a>}
               </div>
