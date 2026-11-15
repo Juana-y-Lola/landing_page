@@ -7,6 +7,8 @@ detailLink: /proyectos/pixban/
 projectLink: https://pixban.app/
 repositoryLink: https://github.com/seba3c/pixban
 previewImage: /images/portfolio/pixban.webp
+previewImageWidth: 2760
+previewImageHeight: 1574
 imageAlt: Captura de pixban.app con una ilustración de dos coches clásicos en una gasolinera del desierto y el panel de ajustes de pixelado.
 category: Editor de imágenes
 kind: real

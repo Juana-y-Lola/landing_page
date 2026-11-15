@@ -18,4 +18,4 @@ I built this site as a home for my professional profile and writing. Visitors ca
 
 ## Built with
 
-The site is implemented with Astro and deployed on Netlify.
+The site is implemented with Astro and deployed on Cloudflare Pages.

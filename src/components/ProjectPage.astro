@@ -42,13 +42,12 @@ const { Content } = await render(entry);
               </div>
             )}
           </div>
-          <div class="project-hero-image"><img src={entry.data.previewImage} width="1200" height="800" alt={entry.data.imageAlt} /></div>
+          <div class="project-hero-image"><img src={entry.data.previewImage} width={entry.data.previewImageWidth ?? 1200} height={entry.data.previewImageHeight ?? 800} alt={entry.data.imageAlt} /></div>
         </div>
       </div>
     </section>
     <section class="project-body section-pad">
-      <div class="shell project-body-grid">
-        <div class="project-aside"><p class="eyebrow section-label">{t.detail.overview}</p></div>
+      <div class="shell">
         <article class="prose"><Content /></article>
       </div>
     </section>

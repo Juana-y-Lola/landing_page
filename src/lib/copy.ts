@@ -81,7 +81,7 @@ export const copy = {
       note: 'Tus datos se usarán únicamente para responder a tu consulta.',
       privacyLink: 'Más información sobre privacidad',
     },
-    detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', overview: 'La idea', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
+    detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
     thanks: { title: '¡Mensaje enviado!', description: 'Gracias por escribirme. He recibido tu mensaje y te responderé lo antes posible.', back: 'Volver al inicio' },
     privacy: {
       title: 'Privacidad y titularidad',
@@ -171,7 +171,7 @@ export const copy = {
       note: 'Your details will only be used to reply to your enquiry.',
       privacyLink: 'More information about privacy',
     },
-    detail: { back: 'Back to projects', concept: 'Concept project', overview: 'The idea', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
+    detail: { back: 'Back to projects', concept: 'Concept project', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
     thanks: { title: 'Message sent!', description: 'Thank you for getting in touch. I have received your message and will reply as soon as I can.', back: 'Back to home' },
     privacy: {
       title: 'Privacy and site ownership',

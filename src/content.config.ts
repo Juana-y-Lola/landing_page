@@ -13,6 +13,8 @@ const portfolio = defineCollection({
     projectLink: z.url({ protocol: /^https$/ }).optional(),
     repositoryLink: z.url({ protocol: /^https$/ }).optional(),
     previewImage: z.string(),
+    previewImageWidth: z.number().int().positive().optional(),
+    previewImageHeight: z.number().int().positive().optional(),
     imageAlt: z.string(),
     category: z.string(),
     kind: z.enum(['concept', 'real']),
