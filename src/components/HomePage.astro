@@ -107,16 +107,18 @@ const contactEmail = 'hola@juanaylola.com';
         </div>
         <div class="cat-gallery">
           {t.story.names.map((name, index) => (
-            <figure class:list={['cat-card', `cat-card-${index + 1}`]}>
-              <div class="cat-placeholder">
-                {petPhotos[index] ? (
-                  <img src={petPhotos[index] ?? undefined} alt={`${locale === 'es' ? 'Foto de' : 'Photo of'} ${name}`} loading="lazy" />
-                ) : (
-                  <><svg viewBox="0 0 140 150" fill="none" aria-hidden="true"><path d="M24 70 28 19 55 42c10-5 20-5 30 0l27-23 4 51c7 10 10 21 10 33 0 28-25 44-56 44s-56-16-56-44c0-12 3-23 10-33Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M48 92c4-4 10-4 14 0m16 0c4-4 10-4 14 0M67 105l3 3 3-3m-3 3v7m0 0c-4 4-8 5-13 2m13-2c4 4 8 5 13 2M37 109l-23-5m23 13-22 2m88-10 23-5m-23 13 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{t.story.photoSoon}</span></>
-                )}
-              </div>
-              <figcaption>{name}</figcaption>
-            </figure>
+            <div class="cat-photo-motion">
+              <figure class:list={['cat-card', `cat-card-${index + 1}`]}>
+                <div class="cat-placeholder">
+                  {petPhotos[index] ? (
+                    <img src={petPhotos[index] ?? undefined} alt={`${locale === 'es' ? 'Foto de' : 'Photo of'} ${name}`} loading="lazy" />
+                  ) : (
+                    <><svg viewBox="0 0 140 150" fill="none" aria-hidden="true"><path d="M24 70 28 19 55 42c10-5 20-5 30 0l27-23 4 51c7 10 10 21 10 33 0 28-25 44-56 44s-56-16-56-44c0-12 3-23 10-33Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M48 92c4-4 10-4 14 0m16 0c4-4 10-4 14 0M67 105l3 3 3-3m-3 3v7m0 0c-4 4-8 5-13 2m13-2c4 4 8 5 13 2M37 109l-23-5m23 13-22 2m88-10 23-5m-23 13 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{t.story.photoSoon}</span></>
+                  )}
+                </div>
+                <figcaption>{name}</figcaption>
+              </figure>
+            </div>
           ))}
         </div>
       </div>
@@ -163,6 +165,48 @@ const contactEmail = 'hola@juanaylola.com';
 <script>
   const serviceCards = [...document.querySelectorAll<HTMLElement>('.service-card')];
   const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const catGallery = document.querySelector<HTMLElement>('.cat-gallery');
+
+  if (catGallery && !motionPreference.matches && 'IntersectionObserver' in window) {
+    const photos = [...catGallery.querySelectorAll<HTMLElement>('.cat-photo-motion')];
+    const pendingPhotos = new Set(photos);
+    let started = false;
+    const settleAlbum = () => {
+      observer.disconnect();
+      catGallery.removeAttribute('data-album');
+      photos.forEach((photo) => photo.removeEventListener('animationend', onAnimationEnd));
+      motionPreference.removeEventListener('change', onPreference);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+    const onAnimationEnd = (event: AnimationEvent) => {
+      if (event.animationName !== 'story-album-open' || event.target !== event.currentTarget) return;
+      pendingPhotos.delete(event.currentTarget as HTMLElement);
+      if (!pendingPhotos.size) settleAlbum();
+    };
+    const onPreference = () => { if (motionPreference.matches) settleAlbum(); };
+    const onVisibility = () => { if (document.hidden) settleAlbum(); };
+    const openAlbum = () => {
+      if (started) return;
+      started = true;
+      observer.disconnect();
+      if (motionPreference.matches || document.hidden) {
+        settleAlbum();
+        return;
+      }
+      catGallery.dataset.album = 'opening';
+    };
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.35)) openAlbum();
+    }, { threshold: 0.35 });
+
+    photos.forEach((photo) => photo.addEventListener('animationend', onAnimationEnd));
+    motionPreference.addEventListener('change', onPreference);
+    document.addEventListener('visibilitychange', onVisibility);
+    catGallery.dataset.album = 'ready';
+    if (window.location.hash === '#historia') openAlbum();
+    else observer.observe(catGallery);
+  }
 
   const processSteps = [...document.querySelectorAll<HTMLElement>('.process-step')];
 

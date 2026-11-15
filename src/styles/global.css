@@ -176,7 +176,20 @@ section[id] { scroll-margin-top: 78px; }
 .story h2 { margin-top: 26px; font-size: clamp(38px, 4vw, 56px); letter-spacing: -.04em; line-height: 1.15; text-wrap: balance; }
 .story-copy > p:not(.eyebrow) { max-width: 480px; margin-top: 24px; color: var(--ink-soft); font-size: 16px; line-height: 1.8; }
 .story-copy > h2 + p:not(.eyebrow) { color: var(--ink); font-weight: 500; }
-.cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; align-items: center; transform: rotate(-3deg); }
+.cat-gallery { --cat-gap: 13px; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--cat-gap); align-items: center; transform: rotate(-3deg); }
+.cat-photo-motion { min-width: 0; }
+.cat-photo-motion:nth-child(1) { --album-x: calc(100% + var(--cat-gap)); --album-y: -28px; --album-turn: -2deg; --album-delay: 0ms; }
+.cat-photo-motion:nth-child(2) { --album-x: 0px; --album-y: 27px; --album-turn: -4deg; --album-delay: 80ms; }
+.cat-photo-motion:nth-child(3) { --album-x: calc(-100% - var(--cat-gap)); --album-y: -22px; --album-turn: 3deg; --album-delay: 160ms; }
+@media (prefers-reduced-motion: no-preference) {
+  .cat-gallery[data-album] .cat-photo-motion { pointer-events: none; }
+  .cat-gallery[data-album="ready"] .cat-photo-motion { transform: translate(var(--album-x), var(--album-y)) rotate(var(--album-turn)); }
+  .cat-gallery[data-album="opening"] .cat-photo-motion { animation: story-album-open 600ms cubic-bezier(0.16, 1, 0.3, 1) var(--album-delay) both; }
+  @keyframes story-album-open {
+    from { transform: translate(var(--album-x), var(--album-y)) rotate(var(--album-turn)); }
+    to { transform: none; }
+  }
+}
 .cat-card { padding: 7px 7px 11px; background: #fff8ed; box-shadow: 0 14px 30px rgba(74,47,40,.15); transition: transform .35s ease, box-shadow .35s ease; }
 .cat-card-1 { transform: translateY(28px) rotate(-4deg); }
 .cat-card-2 { transform: translateY(-27px) rotate(5deg); }
@@ -363,7 +376,7 @@ section[id] { scroll-margin-top: 78px; }
   .process-step { grid-template-columns: 32px 1fr; gap: 12px; }
   .project-card h3 { font-size: 25px; }
   .story-grid { gap: 50px; }
-  .cat-gallery { gap: 5px; }
+  .cat-gallery { --cat-gap: 5px; }
   .cat-card { padding: 4px 4px 8px; }
   .cat-placeholder span { font-size: 7px; }
   .cat-card figcaption { font-size: 11px; }
