@@ -159,6 +159,55 @@ const contactEmail = 'hola@juanaylola.com';
 </BaseLayout>
 
 <script>
+  const serviceCards = [...document.querySelectorAll<HTMLElement>('.service-card')];
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (serviceCards.length && !motionPreference.matches && 'IntersectionObserver' in window) {
+    const pendingCards = new Set(serviceCards);
+    const activeCards = new Set<HTMLElement>();
+    const settleCard = (card: HTMLElement) => {
+      card.classList.remove('service-card-tracing');
+      card.style.removeProperty('--service-delay');
+      activeCards.delete(card);
+      if (!pendingCards.size && !activeCards.size) {
+        motionPreference.removeEventListener('change', settleMotion);
+      }
+    };
+    const settleMotion = () => {
+      if (!motionPreference.matches) return;
+      observer.disconnect();
+      pendingCards.clear();
+      activeCards.forEach(settleCard);
+      motionPreference.removeEventListener('change', settleMotion);
+    };
+    const observer = new IntersectionObserver((entries) => {
+      const visibleCards = entries
+        .filter((entry) => entry.isIntersecting)
+        .map((entry) => entry.target.closest<HTMLElement>('.service-card'))
+        .filter((card): card is HTMLElement => !!card && pendingCards.has(card))
+        .sort((a, b) => serviceCards.indexOf(a) - serviceCards.indexOf(b));
+
+      visibleCards.forEach((card, index) => {
+        pendingCards.delete(card);
+        const heading = card.querySelector('.service-card-top');
+        if (heading) observer.unobserve(heading);
+        activeCards.add(card);
+        card.style.setProperty('--service-delay', `${Math.min(index, 3) * 70}ms`);
+        card.classList.add('service-card-tracing');
+        card.querySelector('.service-card-top span')?.addEventListener('animationend', () => {
+          settleCard(card);
+        }, { once: true });
+      });
+      if (!pendingCards.size) observer.disconnect();
+    }, { threshold: 0.5 });
+
+    motionPreference.addEventListener('change', settleMotion);
+    serviceCards.forEach((card) => {
+      const heading = card.querySelector('.service-card-top');
+      if (heading) observer.observe(heading);
+    });
+  }
+
   const contactForm = document.querySelector<HTMLFormElement>('.contact-form');
 
   if (contactForm) {
