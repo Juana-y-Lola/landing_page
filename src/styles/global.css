@@ -138,6 +138,7 @@ section[id] { scroll-margin-top: 78px; }
 .process { background: #f4e8df; }
 .process-grid { display: grid; grid-template-columns: minmax(0, 44fr) minmax(0, 56fr); gap: 50px; }
 .process-heading { position: relative; min-height: 310px; }
+.process-track { min-width: 0; overflow-x: clip; }
 .process h2 { max-width: 480px; margin-top: 24px; font-size: clamp(42px, 4.3vw, 62px); letter-spacing: -.04em; text-wrap: balance; }
 .process-steps { margin: 0; padding: 0; border-top: 1px solid #cbbdb3; list-style: none; }
 .process-step { display: grid; grid-template-columns: 45px minmax(0, 1fr); gap: 20px; align-items: start; padding: 28px 0; border-bottom: 1px solid #cbbdb3; }
