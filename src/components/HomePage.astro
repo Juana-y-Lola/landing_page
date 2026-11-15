@@ -59,11 +59,11 @@ const contactEmail = 'hola@juanaylola.com';
           <p class="eyebrow section-label">{t.process.eyebrow}</p>
           <h2>{t.process.title}</h2>
         </div>
-        <div class="process-steps">
+        <ol class="process-steps" role="list">
           {t.process.items.map((item) => (
-            <div class="process-step"><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></div>
+            <li class="process-step"><span aria-hidden="true">{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
 

@@ -109,18 +109,14 @@ section[id] { scroll-margin-top: 78px; }
 .service-card p { margin-top: 15px; color: #acb9ba; font-size: 13px; line-height: 1.75; }
 
 .process { background: #f4e8df; }
-.process-grid { display: grid; grid-template-columns: 44% 56%; gap: 50px; }
+.process-grid { display: grid; grid-template-columns: minmax(0, 44fr) minmax(0, 56fr); gap: 50px; }
 .process-heading { position: relative; min-height: 310px; }
-.process h2 { max-width: 430px; margin-top: 24px; }
-.process-steps { border-top: 1px solid #cbbdb3; }
-.process-step { display: grid; grid-template-columns: 45px 1fr; gap: 20px; align-items: start; padding: 30px 0; border-bottom: 1px solid #cbbdb3; }
-.process-step > span { padding-top: 4px; color: #ad6251; font-size: 11px; font-weight: 800; }
+.process h2 { max-width: 480px; margin-top: 24px; font-size: clamp(42px, 4.3vw, 62px); letter-spacing: -.04em; text-wrap: balance; }
+.process-steps { margin: 0; padding: 0; border-top: 1px solid #cbbdb3; list-style: none; }
+.process-step { display: grid; grid-template-columns: 45px minmax(0, 1fr); gap: 20px; align-items: start; padding: 28px 0; border-bottom: 1px solid #cbbdb3; }
+.process-step > span { padding-top: 4px; color: #a44e3f; font-size: 12px; font-weight: 800; font-variant-numeric: tabular-nums; }
 .process-step h3 { font-family: var(--font-display); font-size: 23px; letter-spacing: -.04em; line-height: 1.25; }
-.process-step p { max-width: 380px; margin-top: 8px; color: var(--ink-soft); font-size: 13px; line-height: 1.75; }
-@media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .process-step { transition: transform .25s ease; }
-  .process-step:hover { transform: translateX(6px); }
-}
+.process-step p { max-width: 380px; margin-top: 8px; color: var(--ink-soft); font-size: 16px; line-height: 1.7; }
 
 .work { background: var(--paper); }
 .work-heading { max-width: 630px; }
