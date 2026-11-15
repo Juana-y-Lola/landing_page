@@ -16,42 +16,48 @@ const formattedDate = new Intl.DateTimeFormat(locale, { dateStyle: 'long', timeZ
   description={t.description}
   canonicalPath={paths[locale].privacy}
   alternatePaths={{ es: paths.es.privacy, en: paths.en.privacy }}
+  useJakarta
 >
   <main id="main-content" class="privacy-page">
-    <article class="shell privacy-content">
+    <article>
       <header class="privacy-heading">
-        <h1>{t.title}</h1>
-        <p class="privacy-intro">{t.description}</p>
-        <p class="privacy-updated">{t.updated} <time datetime={updatedAt}>{formattedDate}</time></p>
+        <div class="shell privacy-content">
+          <a class="back-link privacy-back" href={paths[locale].home}><svg viewBox="0 0 20 20" width="18" height="18" fill="none" aria-hidden="true"><path d="M16 10H4m5-5-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>{t.back}</a>
+          <h1>{t.title}</h1>
+          <p class="privacy-intro">{t.description}</p>
+          <p class="privacy-updated">{t.updated} <time datetime={updatedAt}>{formattedDate}</time></p>
+        </div>
       </header>
+      <div class="shell privacy-content privacy-body">
 
-      <section class="privacy-section" aria-labelledby="privacy-owner">
-        <h2 id="privacy-owner">{t.owner.title}</h2>
-        <p>{t.owner.text} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
-      </section>
-      <section class="privacy-section" aria-labelledby="privacy-data">
-        <h2 id="privacy-data">{t.data.title}</h2>
-        <p>{t.data.text}</p>
-      </section>
-      <section class="privacy-section" aria-labelledby="privacy-providers">
-        <h2 id="privacy-providers">{t.providers.title}</h2>
-        <p>{t.providers.text}</p>
-        <p><a href="https://www.netlify.com/pdf/netlify-dpa.pdf">{t.providers.link}</a></p>
-      </section>
-      <section class="privacy-section" aria-labelledby="privacy-retention">
-        <h2 id="privacy-retention">{t.retention.title}</h2>
-        <p>{t.retention.text}</p>
-      </section>
-      <section class="privacy-section" aria-labelledby="privacy-rights">
-        <h2 id="privacy-rights">{t.rights.title}</h2>
-        <p>{t.rights.text} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
-        <p>{t.rights.information}</p>
-        <p><a href="https://www.argentina.gob.ar/aaip/datospersonales/derechos">{t.rights.link}</a></p>
-      </section>
-      <section class="privacy-section" aria-labelledby="privacy-cookies">
-        <h2 id="privacy-cookies">{t.cookies.title}</h2>
-        <p>{t.cookies.text}</p>
-      </section>
+        <section class="privacy-section" aria-labelledby="privacy-owner">
+          <h2 id="privacy-owner"><span class="privacy-number" aria-hidden="true">01</span>{t.owner.title}</h2>
+          <p>{t.owner.text} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+        </section>
+        <section class="privacy-section" aria-labelledby="privacy-data">
+          <h2 id="privacy-data"><span class="privacy-number" aria-hidden="true">02</span>{t.data.title}</h2>
+          <p>{t.data.text}</p>
+        </section>
+        <section class="privacy-section" aria-labelledby="privacy-providers">
+          <h2 id="privacy-providers"><span class="privacy-number" aria-hidden="true">03</span>{t.providers.title}</h2>
+          <p>{t.providers.text}</p>
+          <p><a href="https://www.netlify.com/pdf/netlify-dpa.pdf">{t.providers.link}</a></p>
+        </section>
+        <section class="privacy-section" aria-labelledby="privacy-retention">
+          <h2 id="privacy-retention"><span class="privacy-number" aria-hidden="true">04</span>{t.retention.title}</h2>
+          <p>{t.retention.text}</p>
+        </section>
+        <section class="privacy-section" aria-labelledby="privacy-rights">
+          <h2 id="privacy-rights"><span class="privacy-number" aria-hidden="true">05</span>{t.rights.title}</h2>
+          <p>{t.rights.text} <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+          <p>{t.rights.information}</p>
+          <p><a href="https://www.argentina.gob.ar/aaip/datospersonales/derechos">{t.rights.link}</a></p>
+        </section>
+        <section class="privacy-section" aria-labelledby="privacy-cookies">
+          <h2 id="privacy-cookies"><span class="privacy-number" aria-hidden="true">06</span>{t.cookies.title}</h2>
+          <p>{t.cookies.text}</p>
+        </section>
+      </div>
     </article>
   </main>
 </BaseLayout>

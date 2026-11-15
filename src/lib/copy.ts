@@ -84,6 +84,7 @@ export const copy = {
     detail: { back: 'Volver a proyectos', concept: 'Proyecto conceptual', next: '¿Tienes una idea parecida?', nextAction: 'Hablemos' },
     thanks: { title: '¡Mensaje enviado!', description: 'Gracias por escribirme. He recibido tu mensaje y te responderé lo antes posible.', back: 'Volver al inicio' },
     privacy: {
+      back: 'Volver al inicio',
       title: 'Privacidad y titularidad',
       description: 'Quién está detrás de Juana & Lola Digital y cómo se utilizan los datos de tus consultas.',
       updated: 'Última actualización:',
@@ -174,6 +175,7 @@ export const copy = {
     detail: { back: 'Back to projects', concept: 'Concept project', next: 'Have a similar idea?', nextAction: 'Let’s talk' },
     thanks: { title: 'Message sent!', description: 'Thank you for getting in touch. I have received your message and will reply as soon as I can.', back: 'Back to home' },
     privacy: {
+      back: 'Back to home',
       title: 'Privacy and site ownership',
       description: 'Who is behind Juana & Lola Digital and how the information in your enquiries is used.',
       updated: 'Last updated:',
