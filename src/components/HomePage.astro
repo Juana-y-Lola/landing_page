@@ -132,6 +132,7 @@ const contactEmail = 'hola@juanaylola.com';
           <a class="contact-email-card" href={`mailto:${contactEmail}`}>
             <span class="contact-email-label">EMAIL</span>
             <span class="contact-email-address">{contactEmail}</span>
+            <svg class="contact-email-arrow" viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </a>
         </div>
         <form class="contact-form" name="contact" method="POST" action={paths[locale].thanks} data-netlify="true" netlify-honeypot="bot-field" data-locale={locale} data-sending-label={t.contact.sending}>
