@@ -18,4 +18,4 @@ Creé esta web como espacio para presentar mi perfil profesional y compartir lo 
 
 ## Tecnología
 
-La web está desarrollada con Astro y desplegada en Netlify.
+La web está desarrollada con Astro y desplegada en Cloudflare Pages.

@@ -13,14 +13,16 @@ const hasConcepts = projects.some((project) => project.data.kind === 'concept');
 const contactEmail = 'hola@juanaylola.com';
 ---
 
-<BaseLayout locale={locale} title={t.title} description={t.description} canonicalPath={paths[locale].home} alternatePaths={{ es: '/', en: '/en/' }} isHome>
+<BaseLayout locale={locale} title={t.title} description={t.description} canonicalPath={paths[locale].home} alternatePaths={{ es: '/', en: '/en/' }} isHome useJakarta>
   <main id="main-content">
     <section class="hero section-pad" id="inicio">
       <div class="shell hero-grid">
         <div class="hero-copy">
           <div class="hero-heading">
-            <p class="eyebrow"><span class="eyebrow-dot"></span>{t.hero.eyebrow}</p>
-            <p class="hero-location">{t.hero.location}</p>
+            <div class="hero-meta">
+              <p class="hero-services">{t.hero.eyebrow}</p>
+              <p class="hero-location">{t.hero.location}</p>
+            </div>
             <h1><span>{t.hero.before}</span> <em>{t.hero.highlight}</em></h1>
           </div>
           <p class="hero-lead">{t.hero.body}</p>
@@ -35,14 +37,14 @@ const contactEmail = 'hola@juanaylola.com';
     <section class="services section-pad" id="servicios">
       <div class="shell">
         <div class="section-heading services-heading">
-          <p class="eyebrow light"><span class="eyebrow-dot"></span>{t.services.eyebrow}</p>
+          <p class="eyebrow light section-label">{t.services.eyebrow}</p>
           <h2>{t.services.title}</h2>
           <p>{t.services.intro}</p>
         </div>
         <div class="service-grid">
           {t.services.items.map((item) => (
             <article class="service-card">
-              <div class="service-card-top"><span>{item.number} / 04</span><span class="service-icon" aria-hidden="true">{item.icon}</span></div>
+              <div class="service-card-top"><span>{item.number} / 04</span></div>
               <h3>{item.title}</h3>
               {item.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
             </article>
@@ -54,14 +56,15 @@ const contactEmail = 'hola@juanaylola.com';
     <section class="process section-pad" id="proceso">
       <div class="shell process-grid">
         <div class="process-heading">
-          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.process.eyebrow}</p>
+          <p class="eyebrow section-label">{t.process.eyebrow}</p>
           <h2>{t.process.title}</h2>
-          <span class="process-flower" aria-hidden="true">✳</span>
         </div>
-        <div class="process-steps">
-          {t.process.items.map((item) => (
-            <div class="process-step"><span>{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div><span aria-hidden="true">↗</span></div>
-          ))}
+        <div class="process-track">
+          <ol class="process-steps" role="list">
+            {t.process.items.map((item) => (
+              <li class="process-step"><span aria-hidden="true">{item.number}</span><div><h3>{item.title}</h3><p>{item.text}</p></div></li>
+            ))}
+          </ol>
         </div>
       </div>
     </section>
@@ -69,7 +72,7 @@ const contactEmail = 'hola@juanaylola.com';
     <section class="work section-pad" id="proyectos">
       <div class="shell">
         <div class="section-heading work-heading">
-          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.work.eyebrow}</p>
+          <p class="eyebrow section-label">{t.work.eyebrow}</p>
           <h2>{t.work.title}</h2>
           <p>{allConcepts ? t.work.intro : hasConcepts ? t.work.introMixed : t.work.introReal}</p>
         </div>
@@ -83,7 +86,7 @@ const contactEmail = 'hola@juanaylola.com';
               <h3><a href={project.data.detailLink}>{project.data.name}</a></h3>
               <p>{project.data.description}</p>
               <div class="project-links">
-                <a class="text-link" href={project.data.detailLink}>{project.data.kind === 'concept' ? t.work.view : t.work.viewReal}<span aria-hidden="true">↗</span></a>
+                <a class="text-link project-primary-link" href={project.data.detailLink}>{project.data.kind === 'concept' ? t.work.view : t.work.viewReal}<span aria-hidden="true">↗</span></a>
                 {project.data.projectLink && <a class="text-link" href={project.data.projectLink} target="_blank" rel="noopener noreferrer">{t.work.visitSite}<span aria-hidden="true">↗</span></a>}
                 {project.data.repositoryLink && <a class="text-link" href={project.data.repositoryLink} target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a>}
               </div>
@@ -96,25 +99,26 @@ const contactEmail = 'hola@juanaylola.com';
     <section class="story section-pad" id="historia">
       <div class="shell story-grid">
         <div class="story-copy">
-          <p class="eyebrow light"><span class="eyebrow-dot"></span>{t.story.eyebrow}</p>
+          <p class="eyebrow light section-label">{t.story.eyebrow}</p>
           <h2>{t.story.title}</h2>
           <p>{t.story.text1}</p>
           <p>{t.story.text2}</p>
           <p>{t.story.text3}</p>
-          <span class="story-signature" aria-hidden="true">J<span>&</span>L ✳</span>
         </div>
         <div class="cat-gallery">
           {t.story.names.map((name, index) => (
-            <figure class:list={['cat-card', `cat-card-${index + 1}`]}>
-              <div class="cat-placeholder">
-                {petPhotos[index] ? (
-                  <img src={petPhotos[index] ?? undefined} alt={`${locale === 'es' ? 'Foto de' : 'Photo of'} ${name}`} loading="lazy" />
-                ) : (
-                  <><svg viewBox="0 0 140 150" fill="none" aria-hidden="true"><path d="M24 70 28 19 55 42c10-5 20-5 30 0l27-23 4 51c7 10 10 21 10 33 0 28-25 44-56 44s-56-16-56-44c0-12 3-23 10-33Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M48 92c4-4 10-4 14 0m16 0c4-4 10-4 14 0M67 105l3 3 3-3m-3 3v7m0 0c-4 4-8 5-13 2m13-2c4 4 8 5 13 2M37 109l-23-5m23 13-22 2m88-10 23-5m-23 13 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{t.story.photoSoon}</span></>
-                )}
-              </div>
-              <figcaption>{name}<span aria-hidden="true">✦</span></figcaption>
-            </figure>
+            <div class="cat-photo-motion">
+              <figure class:list={['cat-card', `cat-card-${index + 1}`]}>
+                <div class="cat-placeholder">
+                  {petPhotos[index] ? (
+                    <img src={petPhotos[index] ?? undefined} alt={`${locale === 'es' ? 'Foto de' : 'Photo of'} ${name}`} loading="lazy" />
+                  ) : (
+                    <><svg viewBox="0 0 140 150" fill="none" aria-hidden="true"><path d="M24 70 28 19 55 42c10-5 20-5 30 0l27-23 4 51c7 10 10 21 10 33 0 28-25 44-56 44s-56-16-56-44c0-12 3-23 10-33Z" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M48 92c4-4 10-4 14 0m16 0c4-4 10-4 14 0M67 105l3 3 3-3m-3 3v7m0 0c-4 4-8 5-13 2m13-2c4 4 8 5 13 2M37 109l-23-5m23 13-22 2m88-10 23-5m-23 13 22 2" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>{t.story.photoSoon}</span></>
+                  )}
+                </div>
+                <figcaption>{name}</figcaption>
+              </figure>
+            </div>
           ))}
         </div>
       </div>
@@ -123,15 +127,16 @@ const contactEmail = 'hola@juanaylola.com';
     <section class="contact section-pad" id="contacto">
       <div class="shell contact-grid">
         <div class="contact-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span>{t.contact.eyebrow}</p>
+          <p class="eyebrow section-label">{t.contact.eyebrow}</p>
           <h2>{t.contact.title}</h2>
           <p>{t.contact.intro}</p>
           <ul class="contact-benefits">
-            {t.contact.benefits.map((benefit) => <li><span aria-hidden="true">✦</span>{benefit}</li>)}
+            {t.contact.benefits.map((benefit) => <li>{benefit}</li>)}
           </ul>
           <a class="contact-email-card" href={`mailto:${contactEmail}`}>
             <span class="contact-email-label">EMAIL</span>
             <span class="contact-email-address">{contactEmail}</span>
+            <svg class="contact-email-arrow" viewBox="0 0 20 20" width="20" height="20" fill="none" aria-hidden="true"><path d="M5 15 15 5M5 5h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </a>
         </div>
         <form class="contact-form" name="contact" method="POST" action={paths[locale].thanks} data-netlify="true" netlify-honeypot="bot-field" data-locale={locale} data-sending-label={t.contact.sending}>
@@ -158,6 +163,166 @@ const contactEmail = 'hola@juanaylola.com';
 </BaseLayout>
 
 <script>
+  const serviceCards = [...document.querySelectorAll<HTMLElement>('.service-card')];
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const catGallery = document.querySelector<HTMLElement>('.cat-gallery');
+
+  if (catGallery && !motionPreference.matches && 'IntersectionObserver' in window) {
+    const photos = [...catGallery.querySelectorAll<HTMLElement>('.cat-photo-motion')];
+    const pendingPhotos = new Set(photos);
+    let started = false;
+    const settleAlbum = () => {
+      observer.disconnect();
+      catGallery.removeAttribute('data-album');
+      photos.forEach((photo) => photo.removeEventListener('animationend', onAnimationEnd));
+      motionPreference.removeEventListener('change', onPreference);
+      document.removeEventListener('visibilitychange', onVisibility);
+    };
+    const onAnimationEnd = (event: AnimationEvent) => {
+      if (event.animationName !== 'story-album-open' || event.target !== event.currentTarget) return;
+      pendingPhotos.delete(event.currentTarget as HTMLElement);
+      if (!pendingPhotos.size) settleAlbum();
+    };
+    const onPreference = () => { if (motionPreference.matches) settleAlbum(); };
+    const onVisibility = () => { if (document.hidden) settleAlbum(); };
+    const openAlbum = () => {
+      if (started) return;
+      started = true;
+      observer.disconnect();
+      if (motionPreference.matches || document.hidden) {
+        settleAlbum();
+        return;
+      }
+      catGallery.dataset.album = 'opening';
+    };
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.35)) openAlbum();
+    }, { threshold: 0.35 });
+
+    photos.forEach((photo) => photo.addEventListener('animationend', onAnimationEnd));
+    motionPreference.addEventListener('change', onPreference);
+    document.addEventListener('visibilitychange', onVisibility);
+    catGallery.dataset.album = 'ready';
+    if (window.location.hash === '#historia') openAlbum();
+    else observer.observe(catGallery);
+  }
+
+  const processSteps = [...document.querySelectorAll<HTMLElement>('.process-step')];
+
+  if (processSteps.length && !motionPreference.matches && 'IntersectionObserver' in window
+    && typeof Element.prototype.animate === 'function') {
+    const pendingSteps = new Set(processSteps);
+    const activeAnimations = new Set<Animation>();
+    const releaseListeners = () => {
+      if (!pendingSteps.size && !activeAnimations.size) {
+        motionPreference.removeEventListener('change', onPreference);
+        document.removeEventListener('visibilitychange', onVisibility);
+      }
+    };
+    const settleAnimations = () => {
+      activeAnimations.forEach((animation) => animation.cancel());
+      activeAnimations.clear();
+      releaseListeners();
+    };
+    const onPreference = () => {
+      if (!motionPreference.matches) return;
+      observer.disconnect();
+      pendingSteps.clear();
+      settleAnimations();
+    };
+    const onVisibility = () => { if (document.hidden) settleAnimations(); };
+    const observer = new IntersectionObserver((entries) => {
+      const visibleSteps = entries
+        .filter((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.25)
+        .map((entry) => entry.target as HTMLElement)
+        .filter((step) => pendingSteps.has(step))
+        .sort((a, b) => processSteps.indexOf(a) - processSteps.indexOf(b));
+
+      visibleSteps.forEach((step, index) => {
+        pendingSteps.delete(step);
+        observer.unobserve(step);
+        if (document.hidden || motionPreference.matches) return;
+        const distance = window.matchMedia('(max-width: 850px)').matches ? 32 : 64;
+        try {
+          [...step.children].forEach((content) => {
+            const animation = content.animate([
+              { transform: `translateX(${distance}px)`, opacity: 0.2 },
+              { transform: 'translateX(0)', opacity: 1 },
+            ], {
+              duration: 600, delay: Math.min(index, 2) * 100,
+              easing: 'cubic-bezier(.16, 1, .3, 1)', fill: 'both',
+            });
+            activeAnimations.add(animation);
+            const release = () => {
+              animation.cancel();
+              activeAnimations.delete(animation);
+              releaseListeners();
+            };
+            void animation.finished.then(release, release);
+          });
+        } catch {
+          // Keep every step readable if the animation API is unavailable at runtime.
+          observer.disconnect();
+          pendingSteps.clear();
+          settleAnimations();
+        }
+      });
+      if (!pendingSteps.size) observer.disconnect();
+      releaseListeners();
+    }, { threshold: 0.25, rootMargin: '0px 0px -32px 0px' });
+
+    motionPreference.addEventListener('change', onPreference);
+    document.addEventListener('visibilitychange', onVisibility);
+    processSteps.forEach((step) => observer.observe(step));
+  }
+
+  if (serviceCards.length && !motionPreference.matches && 'IntersectionObserver' in window) {
+    const pendingCards = new Set(serviceCards);
+    const activeCards = new Set<HTMLElement>();
+    const settleCard = (card: HTMLElement) => {
+      card.classList.remove('service-card-tracing');
+      card.style.removeProperty('--service-delay');
+      activeCards.delete(card);
+      if (!pendingCards.size && !activeCards.size) {
+        motionPreference.removeEventListener('change', settleMotion);
+      }
+    };
+    const settleMotion = () => {
+      if (!motionPreference.matches) return;
+      observer.disconnect();
+      pendingCards.clear();
+      activeCards.forEach(settleCard);
+      motionPreference.removeEventListener('change', settleMotion);
+    };
+    const observer = new IntersectionObserver((entries) => {
+      const visibleCards = entries
+        .filter((entry) => entry.isIntersecting)
+        .map((entry) => entry.target.closest<HTMLElement>('.service-card'))
+        .filter((card): card is HTMLElement => !!card && pendingCards.has(card))
+        .sort((a, b) => serviceCards.indexOf(a) - serviceCards.indexOf(b));
+
+      visibleCards.forEach((card, index) => {
+        pendingCards.delete(card);
+        const heading = card.querySelector('.service-card-top');
+        if (heading) observer.unobserve(heading);
+        activeCards.add(card);
+        card.style.setProperty('--service-delay', `${Math.min(index, 3) * 70}ms`);
+        card.classList.add('service-card-tracing');
+        card.querySelector('.service-card-top span')?.addEventListener('animationend', () => {
+          settleCard(card);
+        }, { once: true });
+      });
+      if (!pendingCards.size) observer.disconnect();
+    }, { threshold: 0.5 });
+
+    motionPreference.addEventListener('change', settleMotion);
+    serviceCards.forEach((card) => {
+      const heading = card.querySelector('.service-card-top');
+      if (heading) observer.observe(heading);
+    });
+  }
+
   const contactForm = document.querySelector<HTMLFormElement>('.contact-form');
 
   if (contactForm) {

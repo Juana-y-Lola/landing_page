@@ -7,7 +7,9 @@ detailLink: /en/projects/pixban/
 projectLink: https://pixban.app/
 repositoryLink: https://github.com/seba3c/pixban
 previewImage: /images/portfolio/pixban.webp
-imageAlt: Screenshot of pixban.app with pixelated license plates and a person, a selected rectangular region, and the settings panel.
+previewImageWidth: 2760
+previewImageHeight: 1574
+imageAlt: Screenshot of pixban.app with an illustration of two classic cars at a desert gas station and the pixelation settings panel.
 category: Image editor
 kind: real
 order: 0

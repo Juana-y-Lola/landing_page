@@ -12,9 +12,10 @@ interface Props {
   alternatePaths: { es: string; en: string };
   noindex?: boolean;
   isHome?: boolean;
+  useJakarta?: boolean;
 }
 
-const { locale, title, description, canonicalPath, alternatePaths, noindex = false, isHome = false } = Astro.props;
+const { locale, title, description, canonicalPath, alternatePaths, noindex = false, isHome = false, useJakarta = false } = Astro.props;
 const site = Astro.site ?? new URL('https://juanaylola.com');
 const canonical = new URL(canonicalPath, site).toString();
 const spanishUrl = new URL(alternatePaths.es, site).toString();
@@ -68,7 +69,7 @@ const structuredData = [
     <title>{title}</title>
     {isHome && <script type="application/ld+json" set:html={JSON.stringify(structuredData).replace(/</g, '\\u003c')} />}
   </head>
-  <body>
+  <body class:list={{ 'font-jakarta': useJakarta }}>
     <a class="skip-link" href="#main-content">{locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}</a>
     <Header locale={locale} alternatePaths={alternatePaths} isHome={isHome} />
     <slot />
